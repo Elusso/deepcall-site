@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейсы DeepCall — реальные результаты клиентов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head><body>
+
+<!-- SVG sprite minimal -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/>
+      <rect x="17" y="8" width="6" height="14" rx="3" />
+      <path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/>
+    </svg>
+    DeepCall
+  </a>
+  <div class="nav-links">
+    <a href="products.html">Продукты</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="how-it-works.html">Как работает</a>
+    <a href="about.html">О нас</a>
+    <a href="pricing.html" class="nav-cta">Запросить прайс</a>
+  </div>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Главная</a>
+  <a href="products.html">Продукты</a>
+  <a href="cases.html">Кейсы</a>
+  <a href="how-it-works.html">Как работает</a>
+  <a href="about.html">О нас</a>
+  <a href="roi-calculator.html">ROI-калькулятор</a>
+  <a href="contacts.html">Контакты</a>
+  <a href="pricing.html" style="color:var(--accent)">Запросить прайс</a>
+</div>
+
+<!-- Hero subpage -->
+<section class="hero" style="min-height:40vh;padding:160px 24px 60px">
+  <div class="hero-bg"></div>
+  <div class="orb orb-1" style="width:200px;height:200px;top:25%;left:15%"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><div class="dot"></div>Кейсы клиентов</div>
+    <h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.2rem)">Реальные результаты, измеримый рост</h1>
+    <p class="hero-sub" style="max-width:640px">170+ компаний используют DeepCall для аудита звонков, перехвата конкурентов и AI-обзвона.</p>
+  </div>
+</section>
+<section class="section" id="cases">
+  <div class="section-head reveal-up"><h2>Истории успеха</h2><p>Как компании увеличивают конверсию звонков и уменьшают воронку утечки</p></div>
+  <div class="card-grid g-3">
+    <div class="case-card reveal delay-1" id="alpha">
+      <div class="case-header"><div class="case-avatar">А</div><div><strong>АльфаСтрой</strong><div style="font-size:.75rem;color:var(--text-dim)">Строительный холдинг · 240 операторов</div></div></div>
+      <div class="quote">"DeepCall увеличил конверсию звонков на 34% за 2 месяца. AI-аудит нашёл точки роста, которые мы не видели 3 года."</div>
+      <div class="metric-val">+34%</div><div class="metric-lbl">конверсия за 8 недель · 240 операторов · строительный холдинг</div>
+      <div style="margin-top:20px;padding:16px;background:rgba(0,180,216,.04);border-radius:12px;border:1px solid var(--border)">
+        <div style="font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">До / После</div>
+        <div style="display:flex;gap:24px"><div><div style="font-family:var(--font-mono);font-size:1.25rem;font-weight:700;color:var(--text-muted)">12%</div><div style="font-size:.75rem;color:var(--text-dim)">Конверсия до</div></div><div><div style="font-family:var(--font-mono);font-size:1.25rem;font-weight:700;color:var(--accent)">16.1%</div><div style="font-size:.75rem;color:var(--text-dim)">Конверсия после</div></div><div><div style="font-family:var(--font-mono);font-size:1.25rem;font-weight:700;color:var(--success)">+34%</div><div style="font-size:.75rem;color:var(--text-dim)">Рост</div></div></div>
+      </div>
+    </div>
+    <div class="case-card reveal delay-2" id="omega">
+      <div class="case-header"><div class="case-avatar">О</div><div><strong>ОмегаЛогистик</strong><div style="font-size:.75rem;color:var(--text-dim)">Логистика и склад · 85 операторов</div></div></div>
+      <div class="quote">"Постобработка Cheshire дала +41% полезных контактов. telesales_DB сэкономила 2 человеко-месяца ручного набора."</div>
+      <div class="metric-val">+41%</div><div class="metric-lbl">полезных контактов · логистика · 85 операторов</div>
+    </div>
+    <div class="case-card reveal delay-3" id="prime">
+      <div class="case-header"><div class="case-avatar">П</div><div><strong>ПраймМед</strong><div style="font-size:.75rem;color:var(--text-dim)">Медицинская сеть · HR-отдел</div></div></div>
+      <div class="quote">"CLAwd обзвонил 2000 кандидатов за ночь после Дня HR. Обычно на это уходит 2 недели."</div>
+      <div class="metric-val">2 000</div><div class="metric-lbl">звонков за 1 ночь · медицина · HR</div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div>
+    <div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div>
+    <div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div>
+  </div>
+  <div><h4>Продукты</h4><a href="product-audit.html">Аудит</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a><a href="product-call-tracking.html">Call Tracking</a></div>
+  <div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
+  <div><h4>Правовое</h4><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a><a href="security.html">Безопасность</a></div>
+</footer>
+<script src="js/script.js"></script>
+</body></html>
