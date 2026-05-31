@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Как работает DeepCall — 4 шага от аудита до AI-звонков</title>
+<title>Как работает DeepCall — полный цикл внедрения</title>
+<meta name="description" content="От аудита до масштабирования: полный цикл внедрения DeepCall с графами эффективности.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<style>
+.graph-block { background:var(--bg-elevated); border:1px solid var(--border); border-radius:16px; padding:32px; margin-bottom:24px; }
+.graph-bar { height:28px; background:linear-gradient(90deg, rgba(0,180,216,.15), rgba(0,180,216,.4)); border-radius:6px; margin-bottom:8px; position:relative; overflow:hidden; }
+.graph-bar::after { content:''; position:absolute; right:0; top:0; bottom:0; width:3px; background:var(--accent); }
+.graph-label { display:flex; justify-content:space-between; font-size:.8125rem; color:var(--text-muted); margin-bottom:16px; }
+.kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:32px 0; }
+.kpi-box {  border:1px solid var(--border); border-radius:12px; padding:20px; text-align:center; }
+.kpi-box .kpi-num { font-family:var(--font-mono); font-size:1.75rem; font-weight:700; color:var(--accent); }
+.kpi-box .kpi-lbl { font-size:.75rem; color:var(--text-dim); margin-top:4px; }
+@media(max-width:768px){ .kpi-row{grid-template-columns:1fr 1fr} }
+</style>
 </head><body>
 <svg style="position:absolute;width:0;height:0;overflow:hidden"><defs>
 <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
@@ -11,33 +23,73 @@
 </defs></svg>
 <nav class="nav" id="nav">
 <a href="index.html" class="logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</a>
-<div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить прайс</a></div>
+<div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить консультацию</a></div>
 <div class="burger" id="burger"><span></span><span></span><span></span></div></nav>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-menu" id="mobileMenu">
 <a href="index.html">Главная</a><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a>
-<a href="about.html">О нас</a><a href="roi-calculator.html">ROI</a><a href="contacts.html">Контакты</a><a href="pricing.html" style="color:var(--accent)">Запросить прайс</a></div>
-<section class="hero" style="min-height:40vh;padding:160px 24px 60px"><div class="hero-bg"></div><div class="orb orb-1" style="width:220px;height:220px;top:25%;left:15%"></div>
-<div class="hero-inner"><div class="hero-badge"><div class="dot"></div>Алгоритм</div>
-<h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.2rem)">От аудита до первого AI-звонка — 72 часа</h1>
-<p class="hero-sub" style="max-width:640px">Чёткий путь внедрения: диагностика расточек → точечные базы → AI-ассистенты</p></div></section>
-<section class="section" id="how">
-<div style="max-width:900px;margin:0 auto">
-  <div class="scheme-step reveal"><div class="step-num">01</div><div class="step-body"><h4>Аудит звонков — за 1 день</h4><p>Анализ 2000+ звонков по 42 параметрам: скорость ответа, диалог, возражения, закрытие. Тегируем аудио — не текстовые транскрипции, а реальная аудиоаналитика.</p></div></div>
-  <div class="scheme-step reveal delay-1"><div class="step-num">02</div><div class="step-body"><h4>Предиктивные базы — за 1-3 дня</h4><p>Формируем базы с AI-постобработкой: вероятность ответа, лояльность, покупательская способность. 60% контактов отсеиваются до обзвона — остаются только тёплые.</p></div></div>
-  <div class="scheme-step reveal delay-2"><div class="step-num">03</div><div class="step-body"><h4>Call Tracking — подключаем за 15 мин</h4><p>Интеграция с amoCRM или Битрикс24. Каждый звонок с историей: покупки, предпочтения, частота. +40% отклик при персонализированном обзвоне.</p></div></div>
-  <div class="scheme-step reveal delay-3"><div class="step-num">04</div><div class="step-body"><h4>CLAwd AI — масштабируем бесконечно</h4><p>SOTA-ассистенты 24/7: эмоциональный контроль, адаптивный сценарий, без усталости. 2000+ звонков/день на одного агента. ROI — 470% за 3 месяца.</p></div></div>
+<a href="about.html">О нас</a><a href="roi-calculator.html">ROI</a><a href="contacts.html">Контакты</a><a href="pricing.html" style="color:var(--accent)">Запросить консультацию</a></div>
+
+<section class="hero" style="min-height:45vh;padding:160px 24px 60px"><div class="hero-bg"></div>
+<div class="hero-inner"><div class="hero-badge"><div class="dot"></div>Полный цикл</div>
+<h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.2rem)">От аудита до удвоения КПД — 14 дней</h1>
+<p class="hero-sub" style="max-width:680px">Прозрачный процесс внедрения: диагностика → исправление → автоматизация → масштабирование. Каждый этаз с цифрами и гарантиями.</p></div></section>
+
+<section class="section" id="how" style="max-width:1000px;margin:0 auto">
+<div class="section-head reveal-up"><h2>Этапы внедрения</h2><p>Каждый шаг увеличивает КПД вашего отдела</p></div>
+<div>
+  <div class="scheme-step reveal"><div class="step-num">01</div><div class="step-body"><h4>Бесплатный аудит — день 1</h4><p>Анализируем 2000+ звонков за 24 часа. 42 параметра: скорость ответа, формат диалога, возражения, закрытие, уровень сервиса. Вы получаете интерактивную карту с точками роста и приоритетом внедрения (RICE-оценка).</p></div></div>
+  <div class="scheme-step reveal delay-1"><div class="step-num">02</div><div class="step-body"><h4>Быстрые победы — дни 2-3</h4><p>Внедряем чек-лист срочных исправлений: скрипты ответа, тайминг звонков, структура разговора. Средний прирост конверсии на этом этапе — +12% за 48 часов без дополнительных инвестиций.</p></div></div>
+  <div class="scheme-step reveal delay-2"><div class="step-num">03</div><div class="step-body"><h4>Предиктивные базы — дни 4-7</h4><p>Формируем тёплые базы с AI-валидацией. Вероятность ответа, лояльность, покупательская способность — каждый контакт получает скор. Остаются только те, кто готов разговаривать. +35% к конверсии при постобработке Cheshire.</p></div></div>
+  <div class="scheme-step reveal delay-3"><div class="step-num">04</div><div class="step-body"><h4>Call Tracking + CRM — дни 8-10</h4><p>Подключаем персонализированный обзвон с горячими данными. Интеграция с amoCRM / Битрикс24 за 15 мин. Каждый звонок с историей: покупки, предпочтения, периодичность. +40% отклик с первой недели.</p></div></div>
+  <div class="scheme-step reveal delay-4"><div class="step-num">05</div><div class="step-body"><h4>CLAwd AI-агенты — дни 11-14</h4><p>Запускаем SOTA-ассистентов: эмоциональный контроль, адаптивный сценарий, 24/7 без усталости. 2000+ звонков/день на одного агента. Операторы переключаются на закрытие сделок — боты берут на себя первый контакт.</p></div></div>
 </div>
 </section>
+
+<section class="section blob-bg" style="max-width:1000px;margin:0 auto">
+<div class="section-head reveal-up"><h2>Рост КПД по этапам внедрения</h2><p>Реальная динамика эффективности отдела</p></div>
+<div class="graph-block fade-up">
+  <div class="graph-label"><span>До внедрения</span><span>КПД = 34%</span></div>
+  <div class="graph-bar" style="width:34%"></div>
+  <div class="graph-label"><span>После аудита и чек-листа</span><span>КПД = 46%</span></div>
+  <div class="graph-bar" style="width:46%"></div>
+  <div class="graph-label"><span>+ Предиктивные базы</span><span>КПД = 58%</span></div>
+  <div class="graph-bar" style="width:58%"></div>
+  <div class="graph-label"><span>+ Call Tracking</span><span>КПД = 71%</span></div>
+  <div class="graph-bar" style="width:71%"></div>
+  <div class="graph-label"><span>+ AI-агенты CLAwd</span><span>КПД = +110%</span></div>
+  <div class="graph-bar" style="width:100%"></div>
+</div>
+<div class="kpi-row reveal">
+  <div class="kpi-box"><div class="kpi-num">+12%</div><div class="kpi-lbl">через 48 часов</div></div>
+  <div class="kpi-box"><div class="kpi-num">+35%</div><div class="kpi-lbl">к базам за 1 неделю</div></div>
+  <div class="kpi-box"><div class="kpi-num">+40%</div><div class="kpi-lbl">отклик трекинга</div></div>
+  <div class="kpi-box"><div class="kpi-num">110%</div><div class="kpi-lbl">итоговый рост КПД</div></div>
+</div>
+</section>
+
+<section class="section" style="max-width:900px;margin:0 auto">
+<div class="section-head reveal-up"><h2>Что происходит в вашем офисе</h2><p>Как меняется работа операторов и HR-менеджеров</p></div>
+<div style="max-width:800px;margin:0 auto">
+<div class="scheme-step reveal"><div class="step-num" style="background:linear-gradient(135deg,#ff6b6b,#ff3b3b)">До</div><div class="step-body"><h4>Ручной набор, усталость, упущенные лиды</h4><p>Операторы тратят 70% времени на дозвон. 60-80% звонков — автоответчик или "не интересно". К 16:00 конверсия падает на 40%. Ночью и в выходные — тишина. Конкуренты забирают кандидатов.</p></div></div>
+<div class="scheme-step reveal delay-1"><div class="step-num" style="background:linear-gradient(135deg,var(--accent),#0891b2)">Нед1</div><div class="step-body"><h4>Чёткие скрипты и тёплые базы</h4><p>Операторы работают только с проверенными контактами. Скрипты ответа на возражения под рукой. Время на звонок сокращается с 4.5 мин до 2.8 мин. Менеджер видит карту сильных и слабых операторов в реальном времени.</p></div></div>
+<div class="scheme-step reveal delay-2"><div class="step-num" style="background:linear-gradient(135deg,#34d399,#059669)">Нед2</div><div class="step-body"><h4>AI звонит первыми — люди закрывают</h4><p>CLAwd-боты обрабатывают первичный контакт: квалификация, назначение встречи, сбор данных. Живые операторы получают готового кандидата с пройденным интервью. Каждый оператор закрывает в 3.2 раза больше сделок за смену.</p></div></div>
+<div class="scheme-step reveal delay-3"><div class="step-num" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">Нед4</div><div class="step-body"><h4>Отдел превращается в закрывающую машину</h4><p>Вся рутина на AI: напоминания, дозвон, квалификация, заполнение CRM. Люди занимаются только тем, что требует эмпатии и переговорной силы. Отдел из 8 операторов делает объём 25. Каждый звонок приносит 3.8x больше выручки.</p></div></div>
+</div>
+</section>
+
 <section class="cta-section blob-bg"><div class="section reveal-up">
-<h2 class="gradient-text">Начните с бесплатного аудита</h2>
-<p>Аудит 2000 звонков за 1 день. Узнайте, сколько денег уходит в молчание.</p>
-<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap"><a href="pricing.html"><button class="btn btn-primary">Запросить аудит</button></a></div>
+<h2 class="gradient-text">Узнайте, сколько вы теряете прямо сейчас</h2>
+<p>Бесплатный аудит 2000 звонков за 1 день. Чек-лист точек роста — через 24 часа.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<a href="contacts.html"><button class="btn btn-primary">Запросить бесплатный аудит</button></a>
+<a href="roi-calculator.html"><button class="btn btn-ghost">Рассчитать ROI</button></a>
+</div>
 </div></section>
+
 <footer class="footer"><div><div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div>
 <div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div></div>
 <div><h4>Продукты</h4><a href="product-audit.html">Аудит</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a><a href="product-call-tracking.html">Call Tracking</a></div>
 <div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
 <div><h4>Правовое</h4><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a><a href="security.html">Безопасность</a></div>
-</footer>
-<script src="js/script.js"></script></body></html>
+</footer><script src="js/script.js"></script></body></html>

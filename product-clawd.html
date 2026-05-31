@@ -7,55 +7,55 @@
 <link rel="stylesheet" href="css/styles.css">
 <style>
 .product-page { padding: 140px 24px 60px; max-width: 1000px; margin: 0 auto; }
-.product-page .tag { display: inline-block; padding: 6px 16px; border-radius: 20px; background: rgba(0,180,216,0.15); color: var(--foam); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.product-page .tag { display: inline-block; padding: 6px 16px; border-radius: 20px; background: rgba(0,180,216,0.15); color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
 .product-page h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 16px 0; }
-.product-page .lead { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 40px; }
+.product-page .lead { font-size: 20px; color: var(--text-muted); line-height: 1.6; margin-bottom: 40px; }
 .pain-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
 .pain-solution .col { padding: 28px; border-radius: 16px; }
 .pain-solution .pain { background: rgba(255,59,48,0.06); border: 1px solid rgba(255,59,48,0.12); }
 .pain-solution .solution { background: rgba(0,180,216,0.06); border: 1px solid rgba(0,180,216,0.12); }
 .pain-solution h4 { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--foam-light); }
-.pain-solution li { font-size: 14px; color: var(--text-secondary); padding: 6px 0; padding-left: 24px; position: relative; }
+.pain-solution li { font-size: 14px; color: var(--text-muted); padding: 6px 0; padding-left: 24px; position: relative; }
 .pain-solution .pain li::before { content: '×'; position: absolute; left: 0; color: #ff6b6b; font-weight: 700; }
-.pain-solution .solution li::before { content: '✓'; position: absolute; left: 0; color: var(--foam); font-weight: 700; }
-.scheme-work { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 40px; margin-bottom: 48px; }
+.pain-solution .solution li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.scheme-work { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 20px; padding: 40px; margin-bottom: 48px; }
 .scheme-work h3 { font-size: 22px; font-weight: 600; margin-bottom: 32px; text-align: center; color: var(--foam-light); }
 .scheme-flow { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
-.step-bubble { background: linear-gradient(135deg, var(--ocean), var(--mid-ocean)); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px; text-align: center; min-width: 140px; transition: all 0.3s ease; }
-.step-bubble:hover { transform: translateY(-4px); border-color: var(--wave); box-shadow: 0 8px 24px rgba(0,180,216,0.1); }
-.step-bubble .num { font-family: var(--font-mono); font-size: 22px; font-weight: 700; color: var(--foam); margin-bottom: 4px; }
-.step-bubble .lbl { font-size: 13px; color: var(--text-secondary); }
-.step-arrow { color: var(--text-faint); font-size: 20px; }
-.roi-timeline { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 40px; margin-bottom: 48px; }
+.step-bubble { background: linear-gradient(135deg, var(--ocean), var(--bg)); border: 1px solid var(--border); border-radius: 16px; padding: 20px 24px; text-align: center; min-width: 140px; transition: all 0.3s ease; }
+.step-bubble:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 8px 24px rgba(0,180,216,0.1); }
+.step-bubble .num { font-family: var(--font-mono); font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.step-bubble .lbl { font-size: 13px; color: var(--text-muted); }
+.step-arrow { color: var(--text-dim); font-size: 20px; }
+.roi-timeline { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 20px; padding: 40px; margin-bottom: 48px; }
 .roi-timeline h3 { font-size: 22px; font-weight: 600; margin-bottom: 32px; text-align: center; }
 .roi-months { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
 .roi-month { flex: 1; min-width: 200px; text-align: center; padding: 28px; border-radius: 16px; }
-.roi-month:nth-child(1) { background: rgba(255,170,0,0.06); border: 1px solid rgba(255,170,0,0.15); }
+.roi-month:nth-child(1) { background: rgba(255,1430,0,0.06); border: 1px solid rgba(255,1430,0,0.15); }
 .roi-month:nth-child(2) { background: rgba(0,180,216,0.06); border: 1px solid var(--border); }
-.roi-month:nth-child(3) { background: rgba(0,180,216,0.1); border: 1px solid var(--wave); }
-.roi-month .m-label { font-size: 12px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
-.roi-month .m-val { font-family: var(--font-mono); font-size: 32px; font-weight: 700; color: var(--foam); margin-bottom: 8px; }
-.roi-month .m-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+.roi-month:nth-child(3) { background: rgba(0,180,216,0.1); border: 1px solid var(--accent); }
+.roi-month .m-label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+.roi-month .m-val { font-family: var(--font-mono); font-size: 32px; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+.roi-month .m-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 .comparison { margin-bottom: 48px; }
 .comparison h3 { font-size: 22px; font-weight: 600; margin-bottom: 24px; text-align: center; color: var(--foam-light); }
 .comparison-table { width: 100%; border-collapse: collapse; }
 .comparison-table th, .comparison-table td { padding: 16px 20px; text-align: left; font-size: 14px; }
-.comparison-table thead th { background: var(--deep-ocean); color: var(--foam-light); font-weight: 600; border-bottom: 1px solid var(--border); }
+.comparison-table thead th { background: var(--bg-elevated); color: var(--foam-light); font-weight: 600; border-bottom: 1px solid var(--border); }
 .comparison-table tbody tr { border-bottom: 1px solid var(--border); }
-.comparison-table td { color: var(--text-secondary); }
+.comparison-table td { color: var(--text-muted); }
 .comparison-table td:first-child { color: var(--foam-light); font-weight: 500; }
-.comparison-table td.highlight { color: var(--foam); font-weight: 700; }
+.comparison-table td.highlight { color: var(--accent); font-weight: 700; }
 @media (max-width: 767px) { .pain-solution { grid-template-columns: 1fr; } .scheme-flow { flex-direction: column; } .step-arrow { transform: rotate(90deg); } .roi-months { flex-direction: column; } }
 </style>
 </head>
 <body style="padding-top:0">
 <nav class="nav" id="nav" style="position:relative;top:0;left:0;transform:none;width:100%;max-width:none;border-radius:0;border-left:none;border-right:none">
   <a href="index.html" class="logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 28c0-6 3-10 8-10s8 4 8 10" opacity="0.6"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/><circle cx="20" cy="6" r="2"/></svg>DeepCall</a>
-  <div class="nav-links"><a href="products.html" style="color:var(--foam)">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить прайс</a></div>
+  <div class="nav-links"><a href="products.html" style="color:var(--accent)">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить консультацию</a></div>
   <div class="burger" id="burger"><span></span><span></span><span></span></div>
 </nav>
 <div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-menu" id="mobileMenu"><a href="index.html">Главная</a><a href="products.html" style="color:var(--foam)">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="roi-calculator.html">ROI-калькулятор</a><a href="contacts.html">Контакты</a><a href="pricing.html" style="color:var(--foam)">Запросить прайс</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Главная</a><a href="products.html" style="color:var(--accent)">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="roi-calculator.html">ROI-калькулятор</a><a href="contacts.html">Контакты</a><a href="pricing.html" style="color:var(--accent)">Запросить консультацию</a></div>
 
 <section class="product-page fade-up">
   <span class="tag">AI-обзвон</span>
@@ -100,7 +100,7 @@
       <span class="step-arrow">→</span>
       <div class="step-bubble"><div class="num">6</div><div class="lbl">Отчёт в Telegram<br>целевые отмечены</div></div>
     </div>
-    <p style="text-align:center;font-size:14px;color:var(--text-faint)">Скорость ответа бота — 600-900 мс. Человек не отличает от живого оператора в 73% случаев.</p>
+    <p style="text-align:center;font-size:14px;color:var(--text-dim)">Скорость ответа бота — 600-900 мс. Человек не отличает от живого оператора в 73% случаев.</p>
   </div>
 
   <div class="roi-timeline fade-up">
@@ -128,16 +128,16 @@
   </div>
 
   <div style="text-align:center;padding:20px 0 60px" class="fade-up">
-    <a href="pricing.html"><button class="btn-primary" style="margin-bottom:12px">Запросить прайс на Clawd</button></a><br>
+    <a href="pricing.html"><button class="btn-primary" style="margin-bottom:12px">Запросить консультацию на Clawd</button></a><br>
     <a href="products.html"><button class="btn-ghost">← Все продукты</button></a>
   </div>
 </section>
 
 <footer style="border-top:1px solid var(--border);padding:60px 24px 40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px">
-  <div><div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 28c0-6 3-10 8-10s8 4 8 10" opacity="0.6"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/><circle cx="20" cy="6" r="2"/></svg>DeepCall</div><p style="font-size:13px;color:var(--text-faint)">Предиктивная аналитика телеметрии. 170+ инсталляций. 470% ROI.</p><p style="font-size:12px;color:var(--text-faint);margin-top:24px">© 2026 DeepCall Analytics</p></div>
-  <div><h4 style="font-size:14px;color:var(--foam-light);margin-bottom:20px">Продукты</h4><a href="product-call-tracking.html">Call-Tracking</a><a href="product-clawd.html" style="color:var(--foam)">Clawd-боты</a><a href="product-bases.html">Базы</a><a href="product-audit.html">Аудит</a></div>
+  <div><div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 28c0-6 3-10 8-10s8 4 8 10" opacity="0.6"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/><circle cx="20" cy="6" r="2"/></svg>DeepCall</div><p style="font-size:13px;color:var(--text-dim)">Предиктивная аналитика телеметрии. 1430+ инсталляций. 470% ROI.</p><p style="font-size:12px;color:var(--text-dim);margin-top:24px">© 2026 DeepCall Analytics</p></div>
+  <div><h4 style="font-size:14px;color:var(--foam-light);margin-bottom:20px">Продукты</h4><a href="product-call-tracking.html">Call-Tracking</a><a href="product-clawd.html" style="color:var(--accent)">Clawd-боты</a><a href="product-bases.html">Базы</a><a href="product-audit.html">Аудит</a></div>
   <div><h4 style="font-size:14px;color:var(--foam-light);margin-bottom:20px">Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a></div>
-  <div><h4 style="font-size:14px;color:var(--foam-light);margin-bottom:20px">Контакты</h4><a href="https://t.me/deepcall_support">Telegram</a><a href="roi-calculator.html">ROI-калькулятор</a><a href="pricing.html">Запросить прайс</a></div>
+  <div><h4 style="font-size:14px;color:var(--foam-light);margin-bottom:20px">Контакты</h4><a href="https://t.me/deepcall_support">Telegram</a><a href="roi-calculator.html">ROI-калькулятор</a><a href="pricing.html">Запросить консультацию</a></div>
 </footer>
 
 <script src="js/script.js"></script>

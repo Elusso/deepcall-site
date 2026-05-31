@@ -69,7 +69,7 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.reveal, .reveal-up, .reveal-scale, .reveal-left,.scheme-step, [data-step], .num-grid').forEach(el => io.observe(el));
+  document.querySelectorAll('.reveal, .reveal-up, .reveal-scale, .reveal-left, .scheme-step, [data-step], .num-grid, .card, .product-card, .case-card, .base-card').forEach(el => io.observe(el));
   // observe hero stats explicitly
   document.querySelectorAll('.hero-stat .val, .num-val').forEach(el => {
     const p = el.closest('.hero-stat, .num-grid > div');
