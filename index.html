@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepCall — глубоко зовём, быстро ловим</title>
+<meta name="description" content="DeepCall: предиктивная аналитика звонков, AI-обзвон, перехват конкурентов. 170+ компаний, 470% ROI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ═══ SVG SPRITE ═══ -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7c2.37 0 4.47-.74 6.2-2.1"/><path d="M2 2l20 20"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/><rect width="4" height="4" x="17" y="5" rx="1"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></symbol>
+  </defs>
+</svg>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path class="logo-wave" d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/>
+      <path class="logo-wave" style="animation-delay:.3s" d="M2 20 Q10 15, 18 20 T34 20" opacity=".25"/>
+      <rect x="17" y="8" width="6" height="14" rx="3" />
+      <path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/>
+      <circle cx="20" cy="6" r="2"/>
+    </svg>
+    DeepCall
+  </a>
+  <div class="nav-links">
+    <a href="products.html">Продукты</a>
+    <a href="cases.html">Кейсы</a>
+    <a href="how-it-works.html">Как работает</a>
+    <a href="about.html">О нас</a>
+    <a href="pricing.html" class="nav-cta">Запросить прайс</a>
+  </div>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Главная</a>
+  <a href="products.html">Продукты</a>
+  <a href="cases.html">Кейсы</a>
+  <a href="how-it-works.html">Как работает</a>
+  <a href="about.html">О нас</a>
+  <a href="roi-calculator.html">ROI-калькулятор</a>
+  <a href="contacts.html">Контакты</a>
+  <a href="pricing.html" style="color:var(--accent)">Запросить прайс</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="bubbles" id="bubbles"></div>
+  <div class="ripple-ring"></div>
+  <div class="ripple-ring"></div>
+  <div class="ripple-ring"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><div class="dot"></div>Предиктивная аналитика звонков</div>
+    <h1 class="gradient-text">Мы делаем так,<br>чтобы вы дозванивались<br>и договаривались</h1>
+    <p class="hero-sub">170+ компаний уже забрали 47 000+ кандидатов у конкурентов через предиктивную аналитику звонков и AI-обзвон. Средний ROI — 470% за 3 месяца.</p>
+    <div class="hero-cta">
+      <a href="pricing.html"><button class="btn btn-primary">Запросить прайс-лист</button></a>
+      <a href="how-it-works.html"><button class="btn btn-ghost">Как это работает</button></a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="val" data-count="4">0</div><div class="lbl">года на рынке</div></div>
+      <div class="hero-stat"><div class="val" data-count="170">0</div><div class="lbl">инсталляций</div></div>
+      <div class="hero-stat"><div class="val" data-count="1.2" data-suffix=" млн">0</div><div class="lbl">обработано звонков</div></div>
+      <div class="hero-stat"><div class="val" data-count="470" data-suffix="%">0</div><div class="lbl">средний ROI</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><svg width="20" height="20"><use href="#i-chevron-down"/></svg></div>
+</section>
+
+<!-- ═══ PRODUCTS ═══ -->
+<section class="section" id="products">
+  <div class="section-head reveal-up"><h2>Продукты</h2><p>Четыре модуля, которые работают по отдельности или вместе</p></div>
+  <div class="card-grid g-4">
+    <a href="product-audit.html" class="product-card reveal delay-1">
+      <span class="tag">Аудит звонков</span>
+      <div class="metric">+27%</div><div class="metric-lbl">рост конверсии за 4 недели</div>
+      <h3>Глубокий аудит звонков</h3><p>Анализ 2000+ звонков за 1 день. Найдём, где уходят лиды, и дадим чек-лист исправлений.</p>
+    </a>
+    <a href="product-bases.html" class="product-card reveal delay-2">
+      <span class="tag">Базы номеров</span>
+      <div class="metric">+35%</div><div class="metric-lbl">конверсия при постобработке</div>
+      <h3>Базы номеров + Cheshire</h3><p>1.7 млн детализированных номеров + AI-постобработка для повышения качества контактов.</p>
+    </a>
+    <a href="product-clawd.html" class="product-card reveal delay-3">
+      <span class="tag">AI-агенты</span>
+      <div class="metric">47 000+</div><div class="metric-lbl">кандидатов доставлено</div>
+      <h3>CLAwd — AI-агенты</h3><p>SOTA-ассистенты для HR. 2000+ звонков/день с эмоциональным контролем и адаптивным сценарием.</p>
+    </a>
+    <a href="product-call-tracking.html" class="product-card reveal delay-4">
+      <span class="tag">Трекинг</span>
+      <div class="metric">+40%</div><div class="metric-lbl">отклик от точечных звонков</div>
+      <h3>Call Tracking</h3><p>Персонализированный обзвон с горячими данными. Интеграция с amoCRM / Битрикс24 за 15 мин.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ PAINS ═══ -->
+<section class="section blob-bg" id="pains">
+  <div class="section-head reveal-up"><h2>Эти проблемы мы решаем</h2><p>Каждая приводит к потере тысячи лидов и позиций у конкурентов ежемесячно</p></div>
+  <div class="card-grid g-2">
+    <div class="card card-pain reveal delay-1">
+      <div class="card-icon-wrap"><svg><use href="#i-eye-off"/></svg></div>
+      <h3>Не видно проблем</h3><p>Не знаете, сколько потерянных звонков и брошенных клиентов у операторов? 60-80% лидов падает в молчание.</p>
+    </div>
+    <div class="card card-pain reveal delay-2">
+      <div class="card-icon-wrap"><svg><use href="#i-users"/></svg></div>
+      <h3>Не хватает людей</h3><p>Не хватает операторов, а нанимать ещё дорого? Типичная узость — 1 оператор на 40 заявок/день.</p>
+    </div>
+    <div class="card card-pain reveal delay-3">
+      <div class="card-icon-wrap"><svg><use href="#i-trending-up"/></svg></div>
+      <h3>Конкуренты уводят рынок</h3><p>Конкуренты лучше звонят и забирают ваших клиентов. Пока вы молчите — они договариваются.</p>
+    </div>
+    <div class="card card-pain reveal delay-4">
+      <div class="card-icon-wrap"><svg><use href="#i-wallet"/></svg></div>
+      <h3>Высокая стоимость лида</h3><p>ROI от рекламы падает, стоимость заявки растёт. Каждый потерянный звонок = потерянный бюджет.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="section" id="how">
+  <div class="section-head reveal-up"><h2>Как это работает</h2><p>От аудита до первого AI-звонка — 72 часа</p></div>
+  <div style="max-width:900px; margin:0 auto; position:relative">
+    <div class="scheme-step reveal"><div class="step-num">01</div><div class="step-body"><h4>Глубокий аудит звонков</h4><p>Анализируем 2000+ звонков за 1 день. Тегируем по 42 параметрам: скорость ответа, диалог, возражения, закрытие.</p></div></div>
+    <div class="scheme-step reveal delay-1"><div class="step-num">02</div><div class="step-body"><h4>Предиктивные базы</h4><p>Формируем базы с AI-обработкой: вероятность ответа, лояльность. +35% конверсия при постобработке Cheshire.</p></div></div>
+    <div class="scheme-step reveal delay-2"><div class="step-num">03</div><div class="step-body"><h4>Персонализированный обзвон</h4><p>Каждый звонок с историей и портретом. +40% отклик при точечном обзвоне с данными. Интеграция CRM за 15 мин.</p></div></div>
+    <div class="scheme-step reveal delay-3"><div class="step-num">04</div><div class="step-body"><h4>AI-агенты CLAwd</h4><p>SOTA-ассистенты: эмоциональный контроль, адаптивный сценарий, 24/7. 2000+ звонков/день без усталости.</p></div></div>
+  </div>
+</section>
+
+<!-- ═══ NUMBERS ═══ -->
+<section class="section blob-bg" id="numbers">
+  <div class="section-head reveal-up"><h2>Ключевые цифры</h2><p>Результаты, подтверждённые клиентами и системной аналитикой</p></div>
+  <div class="num-grid reveal">
+    <div><div class="num-val" data-count="1.2" data-suffix=" млн">0</div><div class="num-lbl">обработано звонков</div></div>
+    <div><div class="num-val" data-count="47" data-suffix=" 000+">0</div><div class="num-lbl">доставлено кандидатов</div></div>
+    <div><div class="num-val" data-count="470" data-suffix="%">0</div><div class="num-lbl">средний ROI за 3 мес</div></div>
+    <div><div class="num-val" data-count="3" data-prefix="в " data-suffix="-й мес">0</div><div class="num-lbl">окупаемость инвестиций</div></div>
+    <div><div class="num-val" data-count="2000" data-suffix="+">0</div><div class="num-lbl">звонков AI/день</div></div>
+  </div>
+</section>
+
+<!-- ═══ CASES ═══ -->
+<section class="section" id="cases">
+  <div class="section-head reveal-up"><h2>Кейсы клиентов</h2><p>Реальные компании, измеримый рост</p></div>
+  <div class="card-grid g-3">
+    <a href="cases.html#alpha" class="case-card reveal delay-1">
+      <div class="case-header"><div class="case-avatar">А</div><div><strong>АльфаСтрой</strong><div style="font-size:.75rem;color:var(--text-dim)">Строительный холдинг</div></div></div>
+      <div class="quote">"DeepCall увеличил конверсию на 34% за 2 месяца. AI-аудит нашёл точки роста, которые мы не видели 3 года."</div>
+      <div class="metric-val">+34%</div><div class="metric-lbl">рост конверсии за 8 недель</div>
+    </a>
+    <a href="cases.html#omega" class="case-card reveal delay-2">
+      <div class="case-header"><div class="case-avatar">О</div><div><strong>ОмегаЛогистик</strong><div style="font-size:.75rem;color:var(--text-dim)">Логистика и склад</div></div></div>
+      <div class="quote">"Постобработка Cheshire дала +41% полезных контактов. Базы сэкономили 2 человеко-месяца ручного набора."</div>
+      <div class="metric-val">+41%</div><div class="metric-lbl">полезных контактов</div>
+    </a>
+    <a href="cases.html#prime" class="case-card reveal delay-3">
+      <div class="case-header"><div class="case-avatar">П</div><div><strong>ПраймМед</strong><div style="font-size:.75rem;color:var(--text-dim)">Медицинская сеть</div></div></div>
+      <div class="quote">"CLAwd обзвонил 2000 кандидатов за ночь после Дня HR. Обычно на это уходит 2 недели."</div>
+      <div class="metric-val">2 000</div><div class="metric-lbl">звонков за 1 ночь</div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section blob-bg" id="cta">
+  <div class="section reveal-up">
+    <h2 class="gradient-text">Готовы узнать прогноз для вашей компании?</h2>
+    <p>Ответьте на 5 вопросов — получите персональный расчёт ROI и сценарий внедрения.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="roi-calculator.html"><button class="btn btn-primary">Рассчитать ROI</button></a>
+      <a href="pricing.html"><button class="btn btn-glow">Запросить прайс-лист</button></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div>
+    <div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div>
+    <div class="footer-copy">
+      <svg width="14" height="14" style="vertical-align:middle;margin-right:6px"><use href="#i-phone"/></svg>8-800-555-00-00<br>
+      <svg width="14" height="14" style="vertical-align:middle;margin-right:6px"><use href="#i-send"/></svg>hello@deepcall.ru
+      <div style="margin-top:12px">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div>
+      <div style="margin-top:8px"><span class="gradient-text" style="font-size:.625rem;letter-spacing:.05em">MADE WITH AI IN RUSSIA</span></div>
+    </div>
+  </div>
+  <div><h4>Продукты</h4><a href="product-audit.html">Аудит звонков</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a><a href="product-call-tracking.html">Call Tracking</a></div>
+  <div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
+  <div><h4>Правовое</h4><a href="privacy.html">Политика конфиденциальности</a><a href="terms.html">Условия использования</a><a href="security.html">Безопасность данных</a></div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
