@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Продукты DeepCall — аналитика, базы, AI-агенты</title>
+<meta name="description" content="Четыре модуля предиктивной аналитики звонков, AI-обзвона и перехвата конкурентов.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head><body>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="i-audit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" id="nav"><a href="index.html" class="logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3" /><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/><circle cx="20" cy="6" r="2"/></svg>DeepCall</a>
+<div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить прайс</a></div>
+<div class="burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Главная</a><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a>
+<a href="about.html">О нас</a><a href="roi-calculator.html">ROI-калькулятор</a><a href="contacts.html">Контакты</a>
+<a href="pricing.html" style="color:var(--accent)">Запросить прайс</a>
+</div>
+
+<section class="hero" style="min-height:60vh;padding:160px 24px 80px">
+  <div class="hero-bg"></div>
+  <div class="orb orb-1" style="width:250px;height:250px;top:20%;left:10%"></div>
+  <div class="orb orb-2" style="width:200px;height:200px;bottom:10%;right:5%"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><div class="dot"></div>Экосистема продуктов</div>
+    <h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.5rem)">Четыре модуля — один результат</h1>
+    <p class="hero-sub" style="max-width:600px">Каждый модуль работает автономно или в связке. Выбирайте то, что решает вашу задачу прямо сейчас, и масштабируйтесь по мере роста.</p>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="card-grid g-2">
+    <a href="product-audit.html" class="product-card reveal delay-1" style="padding:40px">
+      <span class="tag">Аудит</span>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+        <div class="card-icon-wrap" style="margin:0"><svg width="22" height="22"><use href="#i-audit"/></svg></div>
+        <div class="metric" style="margin:0;font-size:2.5rem">+27%</div>
+      </div>
+      <h3 style="font-size:1.5rem;margin-bottom:8px">Глубокий аудит звонков</h3>
+      <p style="font-size:.9375rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px">Анализ 2000+ звонков за 1 день. 42 параметра на каждый разговор: скорость ответа, диалог, возражения, закрытие. Диаграммы по каналам, операторам, времени дня.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">Скорость ответа</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">ФОРМАТ диалога</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">Возражения</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">Закрытие</span>
+      </div>
+      <span class="card-link">Подробнее о модуле <svg width="14" height="14"><use href="#i-arrow-right"/></svg></span>
+    </a>
+
+    <a href="product-bases.html" class="product-card reveal delay-2" style="padding:40px">
+      <span class="tag">Базы</span>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+        <div class="card-icon-wrap" style="margin:0"><svg width="22" height="22"><use href="#i-database"/></svg></div>
+        <div class="metric" style="margin:0;font-size:2.5rem">+35%</div>
+      </div>
+      <h3 style="font-size:1.5rem;margin-bottom:8px">Базы номеров</h3>
+      <p style="font-size:.9375rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px">1.7 млн детализированных номеров с вероятностью ответа, лояльностью и покупательской способностью. AI-постобработка Cheshire отсекает холодные контакты до обзвона.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">telesales_DB</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">+35% полезных</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">1.7 млн номеров</span>
+      </div>
+      <span class="card-link">Подробнее о модуле <svg width="14" height="14"><use href="#i-arrow-right"/></svg></span>
+    </a>
+
+    <a href="product-clawd.html" class="product-card reveal delay-3" style="padding:40px">
+      <span class="tag">AI-агенты</span>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+        <div class="card-icon-wrap" style="margin:0"><svg width="22" height="22"><use href="#i-bot"/></svg></div>
+        <div class="metric" style="margin:0;font-size:2.5rem">47 000+</div>
+      </div>
+      <h3 style="font-size:1.5rem;margin-bottom:8px">CLAwd — AI-агенты</h3>
+      <p style="font-size:.9375rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px">SOTA-ассистенты для HR-звонков. Эмоциональный контроль, адаптивный сценарий, 24/7 без усталости. 2000+ звонков/день на одного агента.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">SOTA NLP</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">Эмоциональный контроль</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">Адаптивный сценарий</span>
+      </div>
+      <span class="card-link">Подробнее о модуле <svg width="14" height="14"><use href="#i-arrow-right"/></svg></span>
+    </a>
+
+    <a href="product-call-tracking.html" class="product-card reveal delay-4" style="padding:40px">
+      <span class="tag">Трекинг</span>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+        <div class="card-icon-wrap" style="margin:0"><svg width="22" height="22"><use href="#i-chart"/></svg></div>
+        <div class="metric" style="margin:0;font-size:2.5rem">+40%</div>
+      </div>
+      <h3 style="font-size:1.5rem;margin-bottom:8px">Call Tracking</h3>
+      <p style="font-size:.9375rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px">Персонализированный обзвон с горячими данными: история покупок, преференции, периодичность. +40% отклик при точечном обзвоне. Интеграция с CRM за 15 мин.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">История покупок</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">amoCRM / Битрикс24</span>
+        <span style="font-size:.75rem;padding:4px 10px;border-radius:20px;background:rgba(0,180,216,.08);color:var(--accent);border:1px solid rgba(0,180,216,.15)">15 мин интеграция</span>
+      </div>
+      <span class="card-link">Подробнее о модуле <svg width="14" height="14"><use href="#i-arrow-right"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="cta-section blob-bg" id="cta"><div class="section reveal-up">
+  <h2 class="gradient-text">Не уверены, что вам нужно?</h2>
+  <p>Пройдите короткий опрос — получите персональную рекомендацию модулей и расчёт ROI.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="roi-calculator.html"><button class="btn btn-primary">Рассчитать ROI</button></a>
+    <a href="pricing.html"><button class="btn btn-glow">Запросить прайс-лист</button></a>
+  </div>
+</div></section>
+
+<footer class="footer"><div><div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div><div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div></div>
+<div><h4>Продукты</h4><a href="product-audit.html">Аудит</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a><a href="product-call-tracking.html">Call Tracking</a></div>
+<div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
+<div><h4>Правовое</h4><a href="privacy.html">Политика конфиденциальности</a><a href="terms.html">Условия использования</a><a href="security.html">Безопасность</a></div>
+</footer>
+
+<script src="js/script.js"></script>
+</body></html>
