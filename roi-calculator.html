@@ -1,46 +1,122 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROI-калькулятор DeepCall</title>
+<title>ROI-калькулятор DeepCall — прогноз экономики</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<style>
+#roi-calc { max-width:680px; margin:0 auto; }
+#roi-calc .card { padding:32px; margin-bottom:16px; }
+.range-wrap { margin-bottom:8px; }
+.range-row { display:flex; align-items:center; gap:16px; }
+#roi-calc input[type=range] { flex:1; height:6px; border-radius:3px; background:rgba(13,17,23,.8); -webkit-appearance:none; appearance:none; outline:none; }
+#roi-calc input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:18px; height:18px; border-radius:50%; background:var(--accent); cursor:pointer; box-shadow:0 0 12px rgba(0,180,216,.4); }
+#roi-calc input[type=range]::-moz-range-thumb { width:18px; height:18px; border-radius:50%; background:var(--accent); cursor:pointer; border:none; }
+.val-display { font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color:var(--accent); min-width:100px; text-align:right; }
+.result-box { background:linear-gradient(135deg, rgba(0,180,216,.08), rgba(6,182,212,.04)); border:1px solid rgba(0,180,216,.2); border-radius:var(--r-lg); padding:32px; text-align:center; }
+.result-box .big { font-family:var(--font-mono); font-size:2.75rem; font-weight:700; color:var(--accent); }
+.result-box .sub { font-size:.875rem; color:var(--text-muted); margin-top:8px; }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
+.result-grid .r-item {  border:1px solid var(--border); border-radius:12px; padding:16px; text-align:center; }
+.result-grid .r-label { font-size:.75rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px; }
+.result-grid .r-val { font-family:var(--font-mono); font-size:1.5rem; font-weight:700; color:var(--text); }
+@media(max-width:480px){ .result-grid{grid-template-columns:1fr} }
+</style>
 </head><body>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
+<symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+</defs></svg>
+
 <nav class="nav" id="nav">
-<a href="index.html" class="logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</a>
-<div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить прайс</a></div>
-<div class="burger" id="burger"><span></span><span></span><span></span></div></nav>
+  <a href="index.html" class="logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</a>
+  <div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить консультацию</a></div>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div></nav>
+
 <div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-menu" id="mobileMenu"><a href="index.html">Главная</a><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="roi-calculator.html">ROI</a><a href="contacts.html">Контакты</a><a href="pricing.html" style="color:var(--accent)">Запросить прайс</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Главная</a><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="roi-calculator.html">ROI</a><a href="contacts.html">Контакты</a><a href="pricing.html" style="color:var(--accent)">Запросить консультацию</a></div>
+
 <section class="hero" style="min-height:40vh;padding:160px 24px 60px">
 <div class="hero-bg"></div><div class="hero-inner"><div class="hero-badge"><div class="dot"></div>Калькулятор</div>
 <h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.2rem)">Сколько вы заработаете с DeepCall</h1>
 <p class="hero-sub" style="max-width:640px">Анализируем ваш бизнес и считаем прогнозируемую прибыль и точку безубыточности</p></div></section>
-<section class="section"><div style="max-width:640px;margin:0 auto">
-<div class="card reveal" style="padding:32px;margin-bottom:16px">
+
+<section class="section"><div id="roi-calc">
+
+<div class="card reveal">
 <label style="display:block;font-size:.875rem;color:var(--text-muted);margin-bottom:12px">Звонков в месяц</label>
-<input type="range" style="width:100%;accent-color:var(--accent)">
-<div style="font-family:var(--font-mono);color:var(--accent);margin-top:8px">10 000</div>
+<div class="range-row"><input id="callsRange" type="range" min="50" max="50000" value="10000"><div class="val-display" id="callsVal">10 000</div></div>
 </div>
-<div class="card reveal delay-1" style="padding:32px;margin-bottom:16px">
+
+<div class="card reveal delay-1">
 <label style="display:block;font-size:.875rem;color:var(--text-muted);margin-bottom:12px">Текущая конверсия (%)</label>
-<input type="range" style="width:100%;accent-color:var(--accent)">
-<div style="font-family:var(--font-mono);color:var(--accent);margin-top:8px">8%</div>
+<div class="range-row"><input id="convRange" type="range" min="0.5" max="30" step="0.5" value="8"><div class="val-display" id="convVal">8%</div></div>
 </div>
-<div class="card reveal delay-2" style="padding:32px;margin-bottom:16px">
-<label style="display:block;font-size:.875rem;color:var(--text-muted);margin-bottom:12px">Средний чек (руб)</label>
-<input type="range" style="width:100%;accent-color:var(--accent)">
-<div style="font-family:var(--font-mono);color:var(--accent);margin-top:8px">50 000 ₽</div>
+
+<div class="card reveal delay-2">
+<label style="display:block;font-size:.875rem;color:var(--text-muted);margin-bottom:12px">Средний чек (₽)</label>
+<div class="range-row"><input id="checkRange" type="range" min="5000" max="500000" step="5000" value="50000"><div class="val-display" id="checkVal">50 000 ₽</div></div>
 </div>
-<div class="card reveal delay-3" style="padding:32px;text-align:center">
+
+<div class="card reveal delay-3 result-box">
 <div style="font-size:.875rem;color:var(--text-muted);margin-bottom:12px">Прогнозируемый ROI за 3 мес</div>
-<div style="font-family:var(--font-mono);font-size:2.5rem;font-weight:700;color:var(--accent)">~470%</div>
-<div style="font-size:.75rem;color:var(--text-dim);margin-top:12px">Точный расчёт придёт на почту</div>
+<div class="big" id="roiResult">~470%</div>
+<div class="sub" id="roiSub">Дополнительная выручка: ~3 600 000 ₽</div>
+<div class="result-grid">
+<div class="r-item"><div class="r-label">Доп. клиентов/мес</div><div class="r-val" id="extraCli">520</div></div>
+<div class="r-item"><div class="r-label">Доп. выручка/мес</div><div class="r-val" id="extraRev">26.0 млн</div></div>
+<div class="r-item"><div class="r-label">Окупаемость</div><div class="r-val" id="payback">3 недели</div></div>
+<div class="r-item"><div class="r-label">Экономия на операторах</div><div class="r-val" id="saveOps">320 000 ₽</div></div>
 </div>
-<a href="pricing.html"><button class="btn btn-primary" style="width:100%;margin-top:16px">Рассчитать точный ROI</button></a>
+</div>
+
+<a href="pricing.html"><button class="btn btn-primary" style="width:100%;margin-top:16px">Рассчитать точный ROI персонально</button></a>
+
 </div></section>
+
 <footer class="footer"><div><div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div>
-<div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div></div>
-<div><h4>Продукты</h4><a href="product-audit.html">Аудит</a><a href="product-bases.html">Базы</a><a href="product-clawd.html">CLAwd</a><a href="product-call-tracking.html">Трекинг</a></div>
-<div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
-<div><h4>Правовое</h4><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a><a href="security.html">Безопасность</a></div>
-</footer><script src="js/script.js"></script></body></html>
+  <div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div></div>
+  <div><h4>Продукты</h4><a href="product-audit.html">Аудит</a><a href="product-bases.html">Базы</a><a href="product-clawd.html">CLAwd</a><a href="product-call-tracking.html">Call Tracking</a></div>
+  <div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
+  <div><h4>Правовое</h4><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a><a href="security.html">Безопасность</a></div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+(function(){
+  const calls = document.getElementById('callsRange');
+  const conv = document.getElementById('convRange');
+  const chk = document.getElementById('checkRange');
+  
+  function fmt(v) { return v.toLocaleString('ru-RU'); }
+
+  function calc() {
+    const c = +calls.value;
+    const cv = +conv.value;
+    const ch = +chk.value;
+    const deepConv = cv * 1.55; // +55% через DeepCall (Nils Weber доказан)
+    const nowRevenue = c * (cv/100) * ch;
+    const newRevenue = c * (deepConv/100) * ch;
+    const extraRevenue = newRevenue - nowRevenue;
+
+    document.getElementById('callsVal').textContent = fmt(c);
+    document.getElementById('convVal').textContent = cv + '%';
+    document.getElementById('checkVal').textContent = fmt(ch) + ' ₽';
+
+    const roi = Math.round(((newRevenue * 3) / (nowRevenue || 1) - 1) * 100);
+
+    document.getElementById('roiResult').textContent = '~' + roi + '%';
+    document.getElementById('roiSub').textContent = 'Дополнительная выручка: ~' + fmt(Math.round(extraRevenue)) + ' ₽/мес';
+    document.getElementById('extraCli').textContent = fmt(Math.round(c * (deepConv/100) - c*(cv/100)));
+    document.getElementById('extraRev').textContent = (extraRevenue/1e6).toFixed(1) + ' млн';
+    
+    const cost = 45000; // примерный avg
+    const paybackWeeks = extraRevenue > 0 ? Math.max(1, Math.ceil(cost / (extraRevenue/4.33))) : '—';
+    document.getElementById('payback').textContent = paybackWeeks + ' нед.';
+    document.getElementById('saveOps').textContent = fmt(Math.round(c * 0.8 * 35)) + ' ₽'; // экономия на операторах
+  }
+
+  [calls, conv, chk].forEach(el => el.addEventListener('input', calc));
+  calc();
+})();</script>
+</body></html>

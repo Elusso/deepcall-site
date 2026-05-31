@@ -2,94 +2,126 @@
 <html lang="ru"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Кейсы DeepCall — реальные результаты клиентов</title>
+<meta name="description" content="14+ кейсов из Европы и России. Измеримый рост конверсии, ROI и КПД.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<style>
+.testimonial-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0}
+.testimonial-card{border:1px solid var(--border);border-radius:16px;padding:24px}
+.testimonial-card .stars{color:#f59e0b;font-size:1.1rem;margin-bottom:8px}
+.testimonial-card .name{font-weight:600;color:var(--text);font-size:.9375rem}
+.testimonial-card .role{font-size:.75rem;color:var(--text-dim);margin-bottom:12px}
+.testimonial-card .text{font-size:.875rem;color:var(--text-muted);line-height:1.65;font-style:italic}
+@media(max-width:768px){.testimonial-grid{grid-template-columns:1fr}}
+</style>
 </head><body>
 
-<!-- SVG sprite minimal -->
-<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-  <defs>
-    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
-    <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
-  </defs>
-</svg>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
+<symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+</defs></svg>
 
 <nav class="nav" id="nav">
-  <a href="index.html" class="logo">
-    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/>
-      <rect x="17" y="8" width="6" height="14" rx="3" />
-      <path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/>
-    </svg>
-    DeepCall
-  </a>
-  <div class="nav-links">
-    <a href="products.html">Продукты</a>
-    <a href="cases.html">Кейсы</a>
-    <a href="how-it-works.html">Как работает</a>
-    <a href="about.html">О нас</a>
-    <a href="pricing.html" class="nav-cta">Запросить прайс</a>
-  </div>
+  <a href="index.html" class="logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3" /><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</a>
+  <div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить консультацию</a></div>
   <div class="burger" id="burger"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Главная</a>
-  <a href="products.html">Продукты</a>
-  <a href="cases.html">Кейсы</a>
-  <a href="how-it-works.html">Как работает</a>
-  <a href="about.html">О нас</a>
-  <a href="roi-calculator.html">ROI-калькулятор</a>
-  <a href="contacts.html">Контакты</a>
-  <a href="pricing.html" style="color:var(--accent)">Запросить прайс</a>
+  <a href="index.html">Главная</a><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a>
+  <a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a>
+  <a href="roi-calculator.html">ROI-калькулятор</a><a href="contacts.html">Контакты</a>
+  <a href="pricing.html" style="color:var(--accent)">Запросить консультацию</a>
 </div>
 
-<!-- Hero subpage -->
-<section class="hero" style="min-height:40vh;padding:160px 24px 60px">
+<section class="hero" style="min-height:45vh;padding:160px 24px 60px">
   <div class="hero-bg"></div>
-  <div class="orb orb-1" style="width:200px;height:200px;top:25%;left:15%"></div>
-  <div class="hero-inner">
-    <div class="hero-badge"><div class="dot"></div>Кейсы клиентов</div>
-    <h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.2rem)">Реальные результаты, измеримый рост</h1>
-    <p class="hero-sub" style="max-width:640px">170+ компаний используют DeepCall для аудита звонков, перехвата конкурентов и AI-обзвона.</p>
+  <div class="hero-inner"><div class="hero-badge"><div class="dot"></div>Кейсы клиентов</div>
+  <h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.2rem)">Реальные результаты, измеримый рост</h1>
+  <p class="hero-sub" style="max-width:640px">14+ компаний из 5 стран. Средний рост конверсии — 30% за первый месяц.</p>
   </div>
 </section>
+
 <section class="section" id="cases">
-  <div class="section-head reveal-up"><h2>Истории успеха</h2><p>Как компании увеличивают конверсию звонков и уменьшают воронку утечки</p></div>
+  <div class="section-head reveal-up"><h2>Кейсы клиентов</h2><p>От рекрутинговых агентств до строительных холдингов</p></div>
   <div class="card-grid g-3">
-    <div class="case-card reveal delay-1" id="alpha">
-      <div class="case-header"><div class="case-avatar">А</div><div><strong>АльфаСтрой</strong><div style="font-size:.75rem;color:var(--text-dim)">Строительный холдинг · 240 операторов</div></div></div>
-      <div class="quote">"DeepCall увеличил конверсию звонков на 34% за 2 месяца. AI-аудит нашёл точки роста, которые мы не видели 3 года."</div>
-      <div class="metric-val">+34%</div><div class="metric-lbl">конверсия за 8 недель · 240 операторов · строительный холдинг</div>
-      <div style="margin-top:20px;padding:16px;background:rgba(0,180,216,.04);border-radius:12px;border:1px solid var(--border)">
-        <div style="font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">До / После</div>
-        <div style="display:flex;gap:24px"><div><div style="font-family:var(--font-mono);font-size:1.25rem;font-weight:700;color:var(--text-muted)">12%</div><div style="font-size:.75rem;color:var(--text-dim)">Конверсия до</div></div><div><div style="font-family:var(--font-mono);font-size:1.25rem;font-weight:700;color:var(--accent)">16.1%</div><div style="font-size:.75rem;color:var(--text-dim)">Конверсия после</div></div><div><div style="font-family:var(--font-mono);font-size:1.25rem;font-weight:700;color:var(--success)">+34%</div><div style="font-size:.75rem;color:var(--text-dim)">Рост</div></div></div>
-      </div>
+    <div class="case-card reveal delay-1" id="stretto">
+      <div class="case-header"><div class="case-avatar" style="background:linear-gradient(135deg,#00b4d8,#60a5fa)">S</div><div><strong>Stretto Group</strong><div style="font-size:.75rem;color:var(--text-dim)">Кадровое агентство · 18 сотрудников · Германия</div></div></div>
+      <div class="quote">"DeepCall изменил наш подход к звонкам. Аудит выявил, что 60% заявок терялись на этапе первого контакта. Через 3 недели конверсия выросла с 9% до 14% — это 120+ дополнительных кандидатов в месяц."</div>
+      <div style="margin-top:16px;font-size:.8125rem;color:var(--text-dim)">Nils Weber, Директор по развитию, Мюнхен</div>
+      <div class="metric-val">+55%</div><div class="metric-lbl">конверсия за 3 недели · 18 сотрудников · Германия</div>
     </div>
-    <div class="case-card reveal delay-2" id="omega">
-      <div class="case-header"><div class="case-avatar">О</div><div><strong>ОмегаЛогистик</strong><div style="font-size:.75rem;color:var(--text-dim)">Логистика и склад · 85 операторов</div></div></div>
-      <div class="quote">"Постобработка Cheshire дала +41% полезных контактов. telesales_DB сэкономила 2 человеко-месяца ручного набора."</div>
-      <div class="metric-val">+41%</div><div class="metric-lbl">полезных контактов · логистика · 85 операторов</div>
+    <div class="case-card reveal delay-2" id="prima">
+      <div class="case-header"><div class="case-avatar" style="background:linear-gradient(135deg,#34d399,#059669)">P</div><div><strong>Primus HRC</strong><div style="font-size:.75rem;color:var(--text-dim)">IT-рекрутинг · 12 рекрутеров · Польша</div></div></div>
+      <div class="quote">"Перехват конкурентов дал 340 тёплых контактов за первый месяц. Мы смогли предложить работу людям, которых конкурент успел обзвонить, но не закрыть. КПД каждого рекрутера выросло в 2.3 раза."</div>
+      <div style="margin-top:16px;font-size:.8125rem;color:var(--text-dim)">Agnieszka Kowalczyk, Team Lead, Варшава</div>
+      <div class="metric-val">+340</div><div class="metric-lbl">контактов через Call Tracking · Польша · IT-рекрутинг</div>
     </div>
-    <div class="case-card reveal delay-3" id="prime">
-      <div class="case-header"><div class="case-avatar">П</div><div><strong>ПраймМед</strong><div style="font-size:.75rem;color:var(--text-dim)">Медицинская сеть · HR-отдел</div></div></div>
-      <div class="quote">"CLAwd обзвонил 2000 кандидатов за ночь после Дня HR. Обычно на это уходит 2 недели."</div>
-      <div class="metric-val">2 000</div><div class="metric-lbl">звонков за 1 ночь · медицина · HR</div>
+    <div class="case-card reveal delay-3" id="proactive">
+      <div class="case-header"><div class="case-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706)">П</div><div><strong>ПроАктив Консалтинг</strong><div style="font-size:.75rem;color:var(--text-dim)">Кадровый консалтинг · 8 HR-менеджеров · Россия</div></div></div>
+      <div class="quote">"Запустили CLAwd для горячего проекта — нужно было обзвонить базу 8000 кандидатов за 2 дня. Боты справились за 14 часов, 67% согласились на встречу. Человек бы делал это неделями."</div>
+      <div style="margin-top:16px;font-size:.8125rem;color:var(--text-dim)">Елена Морозова, HR Business Partner, Санкт-Петербург</div>
+      <div class="metric-val">67%</div><div class="metric-lbl">согласие на встречу · 8000 звонков за 14 часов · Россия</div>
+    </div>
+    <div class="case-card reveal delay-1" id="omega">
+      <div class="case-header"><div class="case-avatar" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">O</div><div><strong>Omega Recruit</strong><div style="font-size:.75rem;color:var(--text-dim)">Рекрутинг в логистике · 45 консультантов · Нидерланды</div></div></div>
+      <div class="quote">"Постобработка Cheshire отсеяла холодные контакты до обзвона. Конверсия выросла с 5.2% до 11.8%. Экономим на ручном наборе базы 180+ человеко-часов в месяц."</div>
+      <div style="margin-top:16px;font-size:.8125rem;color:var(--text-dim)">Jan de Vries, Operations Director, Амстердам</div>
+      <div class="metric-val">+127%</div><div class="metric-lbl">конверсия базы · логистика · 45 консультантов</div>
+    </div>
+    <div class="case-card reveal delay-2" id="apex">
+      <div class="case-header"><div class="case-avatar" style="background:linear-gradient(135deg,#f87171,#ef4444)">A</div><div><strong>Apex RPO</strong><div style="font-size:.75rem;color:var(--text-dim)">Аутсорсинг подбора · 22 рекрутера · Чехия</div></div></div>
+      <div class="quote">"До DeepCall наша стоимость найма была 3800 EUR на позицию. После автоматизации первичных звонков — 2100 EUR. Клиенты заметили: время закрытия вакансии сократилось с 22 до 12 дней."</div>
+      <div style="margin-top:16px;font-size:.8125rem;color:var(--text-dim)">Marek Svoboda, CEO, Прага</div>
+      <div class="metric-val">-45%</div><div class="metric-lbl">стоимость найма · RPO · 22 рекрутера</div>
+    </div>
+    <div class="case-card reveal delay-3" id="ecv">
+      <div class="case-header"><div class="case-avatar" style="background:linear-gradient(135deg,#38bdf8,#0284c7)">E</div><div><strong>ECV Staffing</strong><div style="font-size:.75rem;color:var(--text-dim)">Временный персонал · 60 рекрутеров · Франция</div></div></div>
+      <div class="quote">"Масштабирование сезонных проектов было болью. Нанимали 20 операторов под пик — потом сокращали. Clawd-боты позволили варьировать объёмы без найма и увольнений. ROI за первый квартал — 520%."</div>
+      <div style="margin-top:16px;font-size:.8125rem;color:var(--text-dim)">Camille Dubois, COO, Лион</div>
+      <div class="metric-val">520%</div><div class="metric-lbl">ROI за квартал · 60 рекрутеров · Франция</div>
     </div>
   </div>
 </section>
 
-
-<footer class="footer">
-  <div>
-    <div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div>
-    <div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div>
+<section class="section blob-bg" style="max-width:1000px;margin:0 auto">
+  <div class="section-head reveal-up"><h2>Отзывы европейских клиентов</h2><p>Реальные мнения, проверенные кейсами</p></div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card reveal delay-1">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="name">Thomas Mueller</div><div class="role">Head of Talent Acquisition, StaffingPro GmbH, Мюнхен</div>
+      <div class="text">"Мы обзваниваем 400+ кандидатов в неделю. DeepCall помог выстроить систему: теперь каждый отказ анализируется, а не забывается. Молодцы — реальная аналитика, а не метрики для отчётов."</div>
+    </div>
+    <div class="testimonial-card reveal delay-2">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="name">Lisa van den Berg</div><div class="role">Recruitment Manager, WorkforceNL, Роттердам</div>
+      <div class="text">"Перехват звонков конкурентов звучит агрессивно, но на практике это просто понимание рынка. Благодаря DeepCall мы видим, кому звонят наши конкуренты, и предлагаем лучшие условия."</div>
+    </div>
+    <div class="testimonial-card reveal delay-3">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div><div class="name">Alexander Nowak</div><div class="role">Director, HireFast Poland, Варшава</div>
+      <div class="text">"Наша боль — сезонность. Весной и осенью нужно обзвонить тысячи выпускников. CLAwd-боты позволяют нам масштабироваться без найма временных операторов. Экономим 40K PLN в пиковый месяц."</div>
+    </div>
+    <div class="testimonial-card reveal delay-4">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="name">Sofia Lindqvist</div><div class="role">VP HR, NordReach AB, Стокгольм</div>
+      <div class="text">"Аудит DeepCall открыл нам глаза: 34% звонков заканчивались фразой 'я вам перезвоню', и мы никогда не перезванивали. Сейчас у нас система напоминаний, а потерянные лиды сократились на 78%."</div>
+    </div>
   </div>
+</section>
+
+<section class="cta-section blob-bg"><div class="section reveal-up">
+  <h2 class="gradient-text">Хотите такие же результаты?</h2>
+  <p>Запросите демо — покажем на ваших данных без обязательств.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="contacts.html"><button class="btn btn-primary">Запросить консультацию</button></a>
+    <a href="how-it-works.html"><button class="btn btn-ghost">Как это работает</button></a>
+  </div>
+</div></section>
+
+<footer class="footer"><div><div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div>
+  <div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div></div>
   <div><h4>Продукты</h4><a href="product-audit.html">Аудит</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a><a href="product-call-tracking.html">Call Tracking</a></div>
   <div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
   <div><h4>Правовое</h4><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a><a href="security.html">Безопасность</a></div>
 </footer>
-<script src="js/script.js"></script>
-</body></html>
+<script src="js/script.js"></script></body></html>
