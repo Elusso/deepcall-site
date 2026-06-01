@@ -350,7 +350,7 @@ img { max-width:100%; display:block }
 
 .card {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--r-lg);
   padding: var(--space-8);
   transition: all var(--duration-slow) var(--ease-spring);
@@ -395,7 +395,7 @@ img { max-width:100%; display:block }
 ═══════════════════════════════════════ */
 .product-card {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255,255,255,0.06); border-radius: var(--r-xl);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: var(--r-xl);
   padding: var(--space-8); display:block; text-decoration:none; color:inherit;
   transition: all .5s var(--ease-spring); position:relative; overflow:hidden;
   backdrop-filter: blur(20px) saturate(1.2);
@@ -463,7 +463,7 @@ img { max-width:100%; display:block }
    CASES
 ═══════════════════════════════════════ */
 .case-card {
-  background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:var(--r-lg);
+  background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.12); border-radius:var(--r-lg);
   padding:var(--space-6); display:flex; flex-direction:column; gap:var(--space-4);
   transition:all var(--duration-slow) var(--ease-spring);
   backdrop-filter: blur(20px) saturate(1.2);
@@ -608,7 +608,7 @@ img { max-width:100%; display:block }
 .graph-bar::after { content:''; position:absolute; right:0; top:0; bottom:0; width:3px; background:var(--accent); }
 .graph-label { display:flex; justify-content:space-between; font-size:var(--text-xs); color:var(--text-dim); margin-bottom:var(--space-4); }
 .kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:var(--space-8) 0; }
-.kpi-box { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:20px; text-align:center; backdrop-filter: blur(16px); }
+.kpi-box { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:20px; text-align:center; backdrop-filter: blur(16px); }
 .kpi-box .kpi-num { font-family:var(--font-mono); font-size:1.75rem; font-weight:700; color:var(--accent); }
 .kpi-box .kpi-lbl { font-size:.75rem; color:var(--text-dim); margin-top:4px; }
 @media(max-width:768px){ .kpi-row{grid-template-columns:1fr 1fr} }
@@ -699,4 +699,76 @@ img { max-width:100%; display:block }
 @keyframes phoneFloat {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+
+/* ════════════════════════════════════════
+   BIG BLURRED ORBS — OCEAN VIBES
+   ════════════════════════════════════════ */
+.big-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  animation: orbFloat 12s ease-in-out infinite alternate;
+}
+.big-orb.bo1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(56,189,248,0.45) 0%, transparent 70%);
+  top: 10%; left: -5%;
+  animation-duration: 14s;
+}
+.big-orb.bo2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(99,102,241,0.4) 0%, transparent 70%);
+  top: 40%; right: -8%;
+  animation-duration: 18s;
+  animation-delay: -5s;
+}
+.big-orb.bo3 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(14,165,233,0.35) 0%, transparent 70%);
+  bottom: 15%; left: 20%;
+  animation-duration: 16s;
+  animation-delay: -8s;
+}
+.big-orb.bo4 {
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(79,70,229,0.3) 0%, transparent 70%);
+  top: 60%; right: 15%;
+  animation-duration: 20s;
+  animation-delay: -3s;
+}
+@keyframes orbFloat {
+  0%   { transform: translate(0,0) scale(1); }
+  33%  { transform: translate(30px,-20px) scale(1.05); }
+  66%  { transform: translate(-20px,30px) scale(0.95); }
+  100% { transform: translate(10px,10px) scale(1); }
+}
+
+/* ════════════════════════════════════════
+   RISING BUBBLES
+   ════════════════════════════════════════ */
+.bubbles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.bubble {
+  position: absolute;
+  bottom: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25), rgba(255,255,255,0.05) 60%, transparent 70%);
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.15), 0 0 15px rgba(56,189,248,0.1);
+  animation: rise linear infinite;
+  opacity: 0.6;
+}
+@keyframes rise {
+  0%   { transform: translateY(0) scale(1); opacity: 0.6; }
+  50%  { opacity: 0.8; }
+  100% { transform: translateY(-120vh) scale(0.6); opacity: 0; }
 }
