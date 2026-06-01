@@ -45,7 +45,7 @@
         y: H * (0.6 + i * 0.1),
         amplitude: 15 + i * 8,
         frequency: 0.008 + i * 0.003,
-        speed: 0.01 + i * 0.005,
+        speed: 0.003 + i * 0.002,
         offset: i * Math.PI / 3,
         color: waveColors[i]
       });
@@ -92,7 +92,7 @@
 
       // Draw bubbles
       bubbles.forEach(b => {
-        b.y -= b.speed;
+        b.y -= b.speed * 0.6;
         b.wobble += b.wobbleSpeed;
         const bx = b.x + Math.sin(b.wobble) * 20;
 
@@ -121,7 +121,7 @@
       // Light rays from top
       const rayCount = 5;
       for (let i = 0; i < rayCount; i++) {
-        const rayX = W * (0.1 + i * 0.2) + Math.sin(time * 0.005 + i) * 50;
+        const rayX = W * (0.1 + i * 0.2) + Math.sin(time * 0.002 + i) * 50;
         const rayGrad = ctx.createLinearGradient(rayX, 0, rayX + 30, H * 0.5);
         rayGrad.addColorStop(0, 'rgba(0, 212, 255, 0.03)');
         rayGrad.addColorStop(1, 'rgba(0, 212, 255, 0)');

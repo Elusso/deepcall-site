@@ -6,8 +6,64 @@
 <title>DeepCall — глубоко зовём, быстро ловим</title>
 <meta name="description" content="DeepCall: предиктивная аналитика звонков, AI-обзвон, перехват конкурентов. 1430+ компаний, 470% ROI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=5">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=6">
+<style>
+  .hero h1 { font-family: 'Playfair Display', Georgia, serif !important; font-weight: 700; letter-spacing: -0.02em; }
+  .section-head h2 { font-family: 'Playfair Display', Georgia, serif !important; }
+  .cta-section h2 { font-family: 'Playfair Display', Georgia, serif !important; }
+  
+  /* Animated concentric circles - radio waves */
+  .hero-circles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .h-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid;
+    opacity: 0;
+    animation: circleExpand 4s ease-out infinite;
+  }
+  .h-circle.c1 { width: 100px; height: 100px; border-color: rgba(167,139,250,0.6); animation-delay: 0s; }
+  .h-circle.c2 { width: 200px; height: 200px; border-color: rgba(0,212,255,0.5); animation-delay: 0.5s; }
+  .h-circle.c3 { width: 320px; height: 320px; border-color: rgba(52,211,153,0.4); animation-delay: 1s; }
+  .h-circle.c4 { width: 460px; height: 460px; border-color: rgba(96,165,250,0.3); animation-delay: 1.5s; }
+  .h-circle.c5 { width: 580px; height: 580px; border-color: rgba(167,139,250,0.2); animation-delay: 2s; }
+  
+  @keyframes circleExpand {
+    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 0.4; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+  }
+  
+  /* Spiral wave inside circles */
+  .spiral-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,255,0.3), transparent 70%);
+    animation: spiralPulse 2s ease-in-out infinite;
+  }
+  @keyframes spiralPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.9; }
+  }
+</style>
 </head>
 <body><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
 
@@ -45,7 +101,7 @@
     <a href="cases.html">Кейсы</a>
     <a href="how-it-works.html">Как работает</a>
     <a href="about.html">О нас</a>
-    <a href="pricing.html" class="nav-cta">Запросить консультацию</a>
+    <a href="contacts.html" class="nav-cta">Запросить консультацию</a>
   </div>
   <div class="burger" id="burger"><span></span><span></span><span></span></div>
 </nav>
@@ -59,12 +115,20 @@
   <a href="about.html">О нас</a>
   <a href="roi-calculator.html">ROI-калькулятор</a>
   <a href="contacts.html">Контакты</a>
-  <a href="pricing.html" style="color:var(--accent)">Запросить консультацию</a>
+  <a href="contacts.html" style="color:var(--accent)">Запросить консультацию</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
+  <div class="hero-circles">
+    <div class="spiral-core"></div>
+    <div class="h-circle c1"></div>
+    <div class="h-circle c2"></div>
+    <div class="h-circle c3"></div>
+    <div class="h-circle c4"></div>
+    <div class="h-circle c5"></div>
+  </div>
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
@@ -73,11 +137,19 @@
   <div class="ripple-ring"></div>
   <div class="ripple-ring"></div>
   <div class="hero-inner">
+  <!-- Floating ocean bubbles around hero text -->
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden">
+    <div style="position:absolute;width:12px;height:12px;background:rgba(0,212,255,0.15);border-radius:50%;top:10%;left:10%;animation:bubbleFloat 6s ease-in-out infinite"></div>
+    <div style="position:absolute;width:8px;height:8px;background:rgba(0,212,255,0.2);border-radius:50%;top:30%;left:85%;animation:bubbleFloat 8s ease-in-out infinite 1s"></div>
+    <div style="position:absolute;width:16px;height:16px;background:rgba(0,212,255,0.1);border-radius:50%;top:60%;left:5%;animation:bubbleFloat 7s ease-in-out infinite 2s"></div>
+    <div style="position:absolute;width:10px;height:10px;background:rgba(0,180,216,0.15);border-radius:50%;top:80%;left:75%;animation:bubbleFloat 9s ease-in-out infinite 0.5s"></div>
+    <div style="position:absolute;width:6px;height:6px;background:rgba(96,165,250,0.2);border-radius:50%;top:45%;left:92%;animation:bubbleFloat 5s ease-in-out infinite 1.5s"></div>
+  </div>
     <div class="hero-badge"><div class="dot"></div>Предиктивная аналитика звонков</div>
     <h1 class="gradient-text">Мы делаем так,<br>чтобы вы дозванивались<br>и договаривались</h1>
     <p class="hero-sub">1430+ компаний уже забрали 47 000+ кандидатов у конкурентов через предиктивную аналитику звонков и AI-обзвон. Средний ROI — 470% за 3 месяца.</p>
     <div class="hero-cta">
-      <a href="pricing.html"><button class="btn btn-primary">Запросить консультацию</button></a>
+      <a href="contacts.html"><button class="btn btn-primary">Запросить консультацию</button></a>
       <a href="how-it-works.html"><button class="btn btn-ghost">Как это работает</button></a>
     </div>
     <div class="hero-stats">
@@ -94,25 +166,26 @@
 <section class="section" id="products">
   <div class="section-head reveal-up"><h2>Продукты</h2><p>Четыре модуля, которые работают по отдельности или вместе</p></div>
   <div class="card-grid g-4">
-    <a href="product-audit.html" class="product-card card-cyan reveal delay-1">
+    <a href="product-call-tracking.html" class="product-card card-cyan reveal delay-1" style="border:1px solid rgba(0,212,255,0.3);position:relative">
+      <div style="position:absolute;top:-8px;left:16px;background:linear-gradient(135deg,var(--accent),#60a5fa);color:#000;font-size:11px;font-weight:700;padding:3px 12px;border-radius:12px;text-transform:uppercase;letter-spacing:.05em">🔥 Бестселлер</div>
+      <span class="tag">Call Tracking</span>
+      <div class="metric">1000+</div><div class="metric-lbl">контактов за первую неделю</div>
+      <h3>Перехват звонков конкурентов</h3><p>Загружаете номера конкурентов → получаете 1000+ свежих контактов за неделю. Окупаемость — от 5 дней. ROI 520%.</p>
+    </a>
+    <a href="product-audit.html" class="product-card card-purple reveal delay-2">
       <span class="tag">Аудит звонков</span>
       <div class="metric">+27%</div><div class="metric-lbl">рост конверсии за 4 недели</div>
       <h3>Глубокий аудит звонков</h3><p>Анализ 2000+ звонков за 1 день. Найдём, где уходят лиды, и дадим чек-лист исправлений.</p>
     </a>
-    <a href="product-bases.html" class="product-card card-purple reveal delay-2">
+    <a href="product-bases.html" class="product-card card-blue reveal delay-3">
       <span class="tag">Базы номеров</span>
       <div class="metric">+35%</div><div class="metric-lbl">конверсия при постобработке</div>
       <h3>Базы номеров + Cheshire</h3><p>1.7 млн детализированных номеров + AI-постобработка для повышения качества контактов.</p>
     </a>
-    <a href="product-clawd.html" class="product-card card-blue reveal delay-3">
+    <a href="product-clawd.html" class="product-card card-green reveal delay-4">
       <span class="tag">AI-агенты</span>
       <div class="metric">47 000+</div><div class="metric-lbl">кандидатов доставлено</div>
       <h3>CLAwd — AI-агенты</h3><p>SOTA-ассистенты для HR. 2000+ звонков/день с эмоциональным контролем и адаптивным сценарием.</p>
-    </a>
-    <a href="product-call-tracking.html" class="product-card card-green reveal delay-4">
-      <span class="tag">Трекинг</span>
-      <div class="metric">+40%</div><div class="metric-lbl">отклик от точечных звонков</div>
-      <h3>Call Tracking</h3><p>Персонализированный обзвон с горячими данными. Интеграция с amoCRM / Битрикс24 за 15 мин.</p>
     </a>
   </div>
 </section>
@@ -192,7 +265,7 @@
     <p>Ответьте на 5 вопросов — получите персональный расчёт ROI и сценарий внедрения.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
       <a href="roi-calculator.html"><button class="btn btn-primary">Рассчитать ROI</button></a>
-      <a href="pricing.html"><button class="btn btn-glow">Запросить консультацию</button></a>
+      <a href="contacts.html"><button class="btn btn-glow">Запросить консультацию</button></a>
     </div>
   </div>
 </section>
@@ -200,20 +273,30 @@
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
   <div>
-    <div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div>
+    <div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 22 C6 20 4 18 5 16 C7 18 8 20 8 22" opacity="0.6"/>
+  <path d="M8 22 C6 24 4 26 5 28 C7 26 8 24 8 22" opacity="0.6"/>
+  <path d="M8 22 Q8 14 18 14 Q28 14 30 20 Q28 26 18 26 Q8 26 8 22"/>
+  <path d="M18 14 Q20 10 22 12"/>
+  <path d="M18 22 Q14 24 16 26"/>
+  <circle cx="24" cy="19" r="1.5" fill="currentColor" opacity="0.8"/>
+  <path d="M26 24 Q28 25 30 23" opacity="0.5"/>
+  <path d="M30 20 C32 19 34 20 35 22 C36 24 35 26 33 27" />
+  <rect x="32" y="18" width="4" height="8" rx="2" transform="rotate(-20 34 22)" opacity="0.7"/>
+</svg>DeepCall</div>
     <div class="footer-copy">
       <svg width="14" height="14" style="vertical-align:middle;margin-right:6px"><use href="#i-phone"/></svg>8-800-555-00-00<br>
-      <svg width="14" height="14" style="vertical-align:middle;margin-right:6px"><use href="#i-send"/></svg>hello@deepcall.ru
+      <span style="color:var(--accent)"><svg width="14" height="14" style="vertical-align:middle;margin-right:6px" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>@deepcall_support</span>
       <div style="margin-top:12px">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div>
       <div style="margin-top:8px"><span class="gradient-text" style="font-size:.625rem;letter-spacing:.05em">MADE WITH AI IN RUSSIA</span></div>
     </div>
   </div>
-  <div><h4>Продукты</h4><a href="product-audit.html">Аудит звонков</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a><a href="product-call-tracking.html">Call Tracking</a></div>
+  <div><h4>Продукты</h4><a href="product-call-tracking.html">Call Tracking</a><a href="product-audit.html">Аудит звонков</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a></div>
   <div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
   <div><h4>Правовое</h4><a href="privacy.html">Политика конфиденциальности</a><a href="terms.html">Условия использования</a><a href="security.html">Безопасность данных</a></div>
 </footer>
 
-<script src="js/script.js?v=5"></script>
-  <script src="js/ocean.js?v=5"></script>
+<script src="js/script.js?v=6"></script>
+  <script src="js/ocean.js?v=6"></script>
 </body>
 </html>
