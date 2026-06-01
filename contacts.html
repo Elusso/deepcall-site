@@ -1,36 +1,170 @@
 <!DOCTYPE html>
 <html lang="ru"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Контакты DeepCall</title>
+<title>Контакты DeepCall — Запросить консультацию</title>
+<meta name="description" content="Свяжитесь с DeepCall для демо, консультации или внедрения. Ответ за 2 часа. Москва, Пресненская наб., 12.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=5">
 </head><body><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
 <nav class="nav" id="nav">
 <a href="index.html" class="logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</a>
-<div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="pricing.html" class="nav-cta">Запросить консультацию</a></div>
+<div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="contacts.html" class="nav-cta">Запросить консультацию</a></div>
 <div class="burger" id="burger"><span></span><span></span><span></span></div></nav>
 <div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-menu" id="mobileMenu"><a href="index.html">Главная</a><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="roi-calculator.html">ROI</a><a href="contacts.html">Контакты</a><a href="pricing.html" style="color:var(--accent)">Запросить консультацию</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Главная</a><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="roi-calculator.html">ROI</a><a href="contacts.html" style="color:var(--accent)">Контакты</a><a href="contacts.html">Запросить консультацию</a></div>
+
 <section class="hero" style="min-height:40vh;padding:160px 24px 60px">
-<div class="hero-bg"></div><div class="hero-inner"><div class="hero-badge"><div class="dot"></div>Контакты</div>
-<h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.2rem)">Свяжитесь с нами</h1>
-<p class="hero-sub" style="max-width:640px">Москва, Пресненская наб., 12. Башня Федерация. Ответ в течение 2 часов.</p></div></section>
-<section class="section"><div style="max-width:800px;margin:0 auto">
-<div class="card-grid g-2">
-<div class="card reveal delay-1" style="padding:32px"><h3 style="margin-bottom:12px">Телефон</h3><div style="font-family:var(--font-mono);font-size:1.25rem;color:var(--accent)">8-800-555-00-00</div><div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Бесплатно по России</div></div>
-<div class="card reveal delay-2" style="padding:32px"><h3 style="margin-bottom:12px">Email</h3><div style="font-family:var(--font-mono);font-size:1.1rem;color:var(--accent)">hello@deepcall.ru</div><div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Ответ в течение 2 часов</div></div>
-<div class="card reveal delay-3" style="padding:32px"><h3 style="margin-bottom:12px">Адрес</h3><div>Москва, Пресненская наб., 12<br>Башня Федерация</div></div>
-<div class="card reveal delay-4" style="padding:32px"><h3 style="margin-bottom:12px">Telegram</h3><div style="color:var(--accent)">@deepcall_support</div><div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Онлайн 9:00—21:00 МСК</div></div>
-</div>
-</div></section>
-<section class="cta-section blob-bg"><div class="section reveal-up">
-<h2 class="gradient-text">Остались вопросы?</h2>
-<p>Запросите демо — покажем на ваших данных без обязательств.</p>
-<a href="pricing.html"><button class="btn btn-primary">Запросить демо</button></a>
-</div></section>
+  <div class="hero-bg"></div><div class="hero-inner"><div class="hero-badge"><div class="dot"></div>Контакты</div>
+  <h1 class="gradient-text" style="font-size:clamp(2rem,5vw,3.2rem)">Свяжитесь с нами</h1>
+  <p class="hero-sub" style="max-width:640px">Заполните форму — перезвоним за 15 минут или напишем в Telegram. Демо на ваших данных за 24 часа.</p></div>
+</section>
+
+<section class="section">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12)">
+    <!-- Left: Contact Info -->
+    <div>
+      <h2 style="margin-bottom:var(--space-8)">Как с нами связаться</h2>
+      <div class="card-grid g-2" style="margin-bottom:var(--space-8)">
+        <div class="card card-cyan reveal delay-1" style="padding:28px">
+          <div style="display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-3)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <h3 style="margin:0">Телефон</h3>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:1.25rem;color:var(--accent)">8-800-555-00-00</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Бесплатно по России · 9:00—21:00 МСК</div>
+        </div>
+        <div class="card card-purple reveal delay-2" style="padding:28px">
+          <div style="display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-3)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <h3 style="margin:0">Email</h3>
+          </div>
+          <div style="font-family:var(--font-mono);font-size:1.1rem;color:var(--accent)">hello@deepcall.ru</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Ответ в течение 2 часов</div>
+        </div>
+        <div class="card card-blue reveal delay-3" style="padding:28px">
+          <div style="display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-3)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <h3 style="margin:0">Адрес</h3>
+          </div>
+          <div>Москва, Пресненская наб., 12<br>Башня Федерация, офис 4207</div>
+        </div>
+        <div class="card card-green reveal delay-4" style="padding:28px">
+          <div style="display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-3)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <h3 style="margin:0">Telegram</h3>
+          </div>
+          <div style="color:var(--accent)">@deepcall_support</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Онлайн 9:00—21:00 МСК · Ответ за 5 минут</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="card card-cyan reveal delay-2" style="padding:var(--space-10)">
+      <h2 style="margin-bottom:var(--space-6)">Запросить консультацию</h2>
+      <form id="contactForm" style="display:flex;flex-direction:column;gap:var(--space-5)">
+        <div>
+          <label style="display:block;font-size:var(--text-sm);color:var(--text-dim);margin-bottom:var(--space-2)">Ваше имя *</label>
+          <input type="text" name="name" required placeholder="Иван Петров"
+            style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:var(--text);font-size:1rem;outline:none;transition:border-color .2s"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+        </div>
+        <div>
+          <label style="display:block;font-size:var(--text-sm);color:var(--text-dim);margin-bottom:var(--space-2)">Телефон *</label>
+          <input type="tel" name="phone" required placeholder="+7 (999) 000-00-00"
+            style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:var(--text);font-size:1rem;outline:none;transition:border-color .2s"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+        </div>
+        <div>
+          <label style="display:block;font-size:var(--text-sm);color:var(--text-dim);margin-bottom:var(--space-2)">Email</label>
+          <input type="email" name="email" placeholder="ivan@company.ru"
+            style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:var(--text);font-size:1rem;outline:none;transition:border-color .2s"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+        </div>
+        <div>
+          <label style="display:block;font-size:var(--text-sm);color:var(--text-dim);margin-bottom:var(--space-2)">Компания</label>
+          <input type="text" name="company" placeholder="ООО Рекрут-Про"
+            style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:var(--text);font-size:1rem;outline:none;transition:border-color .2s"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+        </div>
+        <div>
+          <label style="display:block;font-size:var(--text-sm);color:var(--text-dim);margin-bottom:var(--space-2)">Что интересует? *</label>
+          <select name="interest" required
+            style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:var(--text);font-size:1rem;outline:none;cursor:pointer"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'">
+            <option value="" disabled selected>Выберите вариант</option>
+            <option value="audit">Глубокий аудит звонков</option>
+            <option value="bases">Базы номеров + Cheshire</option>
+            <option value="clawd">AI CLAwd — обзвон кандидатов</option>
+            <option value="calltracking">Колтрекинг для HR</option>
+            <option value="all">Все продукты (комплекс)</option>
+            <option value="demo">Просто посмотреть демо</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block;font-size:var(--text-sm);color:var(--text-dim);margin-bottom:var(--space-2)">Сообщение</label>
+          <textarea name="message" rows="4" placeholder="Расскажите о вашей задаче: сколько рекрутеров, какой объём звонков, какие проблемы..."
+            style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:var(--text);font-size:1rem;outline:none;resize:vertical;transition:border-color .2s;font-family:inherit"
+            onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'"></textarea>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:var(--space-3)">
+          <input type="checkbox" name="agree" required id="agreeCheck"
+            style="margin-top:3px;accent-color:var(--accent)">
+          <label for="agreeCheck" style="font-size:var(--text-sm);color:var(--text-dim);line-height:1.5">
+            Согласен с <a href="privacy.html" style="color:var(--accent)">политикой конфиденциальности</a> и обработкой персональных данных
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;padding:14px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          Отправить заявку
+        </button>
+        <div id="formStatus" style="text-align:center;font-size:var(--text-sm);display:none"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:linear-gradient(180deg, transparent, rgba(0,212,255,0.02), transparent)">
+  <div style="max-width:800px;margin:0 auto;text-align:center">
+    <h2 style="margin-bottom:var(--space-6)">Почему стоит написать прямо сейчас</h2>
+    <div class="card-grid g-3">
+      <div class="card reveal delay-1" style="padding:var(--space-6)">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:var(--space-3)">15 мин</div>
+        <p style="color:var(--text-dim);font-size:var(--text-sm)">Среднее время ответа на заявку</p>
+      </div>
+      <div class="card reveal delay-2" style="padding:var(--space-6)">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:var(--space-3)">24 часа</div>
+        <p style="color:var(--text-dim);font-size:var(--text-sm)">Демо на ваших данных готово</p>
+      </div>
+      <div class="card reveal delay-3" style="padding:var(--space-6)">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:var(--space-3)">0 ₽</div>
+        <p style="color:var(--text-dim);font-size:var(--text-sm)">Пилотный проект — бесплатно</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="footer"><div><div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/><rect x="17" y="8" width="6" height="14" rx="3"/><path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/></svg>DeepCall</div>
 <div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div></div>
 <div><h4>Продукты</h4><a href="product-audit.html">Аудит</a><a href="product-bases.html">Базы</a><a href="product-clawd.html">CLAwd</a><a href="product-call-tracking.html">Трекинг</a></div>
 <div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
 <div><h4>Правовое</h4><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a><a href="security.html">Безопасность</a></div>
-</footer><script src="js/script.js"></script></body></html>
+</footer><script src="js/script.js?v=5"></script><script src="js/ocean.js?v=5"></script>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  const status = document.getElementById('formStatus');
+  btn.innerHTML = '<span style="display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite;vertical-align:middle;margin-right:8px"></span> Отправка...';
+  btn.disabled = true;
+  
+  // Simulate submission
+  setTimeout(function() {
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:8px"><path d="M20 6L9 17l-5-5"/></svg> Заявка отправлена!';
+    btn.style.background = 'var(--accent-green)';
+    status.innerHTML = '<span style="color:var(--accent-green)">✓ Мы получили вашу заявку! Перезвоним в течение 15 минут.</span>';
+    status.style.display = 'block';
+  }, 2000);
+});
+</script>
+</body></html>
