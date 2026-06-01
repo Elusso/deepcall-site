@@ -3,7 +3,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Контакты DeepCall — Запросить консультацию</title>
 <meta name="description" content="Свяжитесь с DeepCall для демо, консультации или внедрения. Ответ за 2 часа. Москва, Пресненская наб., 12.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css?v=6">
 </head><body><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
 <nav class="nav" id="nav">
@@ -43,13 +43,15 @@
           <div style="font-family:var(--font-mono);font-size:1.25rem;color:var(--accent)">8-800-555-00-00</div>
           <div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Бесплатно по России · 9:00—21:00 МСК</div>
         </div>
-        <div class="card card-purple reveal delay-2" style="padding:28px">
+        <div class="card card-gold reveal delay-2" style="padding:28px; cursor:pointer"
+          onclick="document.getElementById('contactForm').scrollIntoView({behavior:'smooth'})"
+          role="button">
           <div style="display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-3)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <h3 style="margin:0">Email</h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <h3 style="margin:0">Запросить консультацию</h3>
           </div>
-          <div style="font-family:var(--font-mono);font-size:1.1rem;color:var(--accent)">hello@deepcall.ru</div>
-          <div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Ответ в течение 2 часов</div>
+          <div style="font-family:var(--font-mono);font-size:1.1rem;color:var(--accent-orange)">Перезвоним за 15 мин</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:8px">Или напишем в Telegram · 9:00–21:00 МСК</div>
         </div>
         <div class="card card-blue reveal delay-3" style="padding:28px">
           <div style="display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-3)">

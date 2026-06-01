@@ -6,12 +6,12 @@
 <title>DeepCall — глубоко зовём, быстро ловим</title>
 <meta name="description" content="DeepCall: предиктивная аналитика звонков, AI-обзвон, перехват конкурентов. 1430+ компаний, 470% ROI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css?v=6">
 <style>
-  .hero h1 { font-family: 'Playfair Display', Georgia, serif !important; font-weight: 700; letter-spacing: -0.02em; }
-  .section-head h2 { font-family: 'Playfair Display', Georgia, serif !important; }
-  .cta-section h2 { font-family: 'Playfair Display', Georgia, serif !important; }
+  .hero h1 { font-family: 'Space Grotesk', 'Inter', sans-serif !important; font-weight: 700; letter-spacing: -0.02em; }
+  .section-head h2 { font-family: 'Space Grotesk', 'Inter', sans-serif !important; }
+  .cta-section h2 { font-family: 'Space Grotesk', 'Inter', sans-serif !important; }
   
   /* Animated concentric circles - radio waves */
   .hero-circles {
@@ -87,12 +87,16 @@
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="nav">
   <a href="index.html" class="logo">
-    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path class="logo-wave" d="M2 20 Q10 15, 18 20 T34 20" opacity=".4"/>
-      <path class="logo-wave" style="animation-delay:.3s" d="M2 20 Q10 15, 18 20 T34 20" opacity=".25"/>
-      <rect x="17" y="8" width="6" height="14" rx="3" />
-      <path d="M14 22c-2 0-4 2-4 5v3h12v-3c0-3-2-5-4-5"/>
-      <circle cx="20" cy="6" r="2"/>
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 22 C6 20 4 18 5 16 C7 18 8 20 8 22" opacity="0.6"/>
+      <path d="M8 22 C6 24 4 26 5 28 C7 26 8 24 8 22" opacity="0.6"/>
+      <path d="M8 22 Q8 14 18 14 Q28 14 30 20 Q28 26 18 26 Q8 26 8 22"/>
+      <path d="M18 14 Q20 10 22 12"/>
+      <path d="M18 22 Q14 24 16 26"/>
+      <circle cx="24" cy="19" r="1.5" fill="currentColor" opacity="0.8"/>
+      <path d="M26 24 Q28 25 30 23" opacity="0.5"/>
+      <rect x="28" y="17" width="5" height="10" rx="2.5" transform="rotate(-25 30.5 22)" opacity="0.8"/>
+      <path d="M30 20 L33 17" opacity="0.6"/>
     </svg>
     DeepCall
   </a>
@@ -129,6 +133,11 @@
     <div class="h-circle c4"></div>
     <div class="h-circle c5"></div>
   </div>
+  <!-- Big blurred orbs behind text -->
+  <div class="big-orb bo1"></div>
+  <div class="big-orb bo2"></div>
+  <div class="big-orb bo3"></div>
+  <div class="big-orb bo4"></div>
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
@@ -167,7 +176,7 @@
   <div class="section-head reveal-up"><h2>Продукты</h2><p>Четыре модуля, которые работают по отдельности или вместе</p></div>
   <div class="card-grid g-4">
     <a href="product-call-tracking.html" class="product-card card-cyan reveal delay-1" style="border:1px solid rgba(0,212,255,0.3);position:relative">
-      <div style="position:absolute;top:-8px;left:16px;background:linear-gradient(135deg,var(--accent),#60a5fa);color:#000;font-size:11px;font-weight:700;padding:3px 12px;border-radius:12px;text-transform:uppercase;letter-spacing:.05em">🔥 Бестселлер</div>
+      <div style="position:absolute;top:-10px;right:16px;background:linear-gradient(135deg,#ff6b35,#f7931e);color:#fff;font-size:10px;font-weight:800;padding:4px 14px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 4px 15px rgba(255,107,53,0.4);z-index:10">🔥 Бестселлер</div>
       <span class="tag">Call Tracking</span>
       <div class="metric">1000+</div><div class="metric-lbl">контактов за первую неделю</div>
       <h3>Перехват звонков конкурентов</h3><p>Загружаете номера конкурентов → получаете 1000+ свежих контактов за неделю. Окупаемость — от 5 дней. ROI 520%.</p>

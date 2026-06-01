@@ -264,3 +264,34 @@
     initParticles();
   }
 })();
+
+
+/* ════════════════════════════════════════════════
+   BUBBLES RISING — OCEAN VIBES
+   ════════════════════════════════════════════════ */
+(function(){
+  const container = document.querySelector('.bubbles-container');
+  if (!container) return;
+  
+  function createBubble() {
+    const b = document.createElement('div');
+    b.className = 'bubble';
+    const size = Math.random() * 18 + 8; // 8-26px
+    b.style.width = size + 'px';
+    b.style.height = size + 'px';
+    b.style.left = Math.random() * 100 + '%';
+    b.style.bottom = '-40px';
+    b.style.animationDuration = (Math.random() * 10 + 12) + 's';
+    b.style.animationDelay = (Math.random() * 5) + 's';
+    b.style.opacity = Math.random() * 0.4 + 0.3;
+    container.appendChild(b);
+    setTimeout(() => b.remove(), 25000);
+  }
+  
+  // Create initial batch
+  for (let i = 0; i < 25; i++) {
+    setTimeout(createBubble, i * 400);
+  }
+  // Continuous
+  setInterval(createBubble, 1800);
+})();
