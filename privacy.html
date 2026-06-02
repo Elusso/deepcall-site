@@ -1,97 +1,257 @@
 <!DOCTYPE html>
-<html lang="ru"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Политика конфиденциальности — DeepCall</title>
-<meta name="description" content="Полная политика конфиденциальности DeepCall. Обработка персональных данных, безопасность, хранение аудио.">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=9">
-<style>.policy-wrap{max-width:760px;margin:0 auto;padding:0 24px 80px}.policy-wrap h2{font-size:1.5rem;font-weight:700;margin:48px 0 16px;color:var(--text)}.policy-wrap h3{font-size:1.125rem;font-weight:600;margin:28px 0 12px}.policy-wrap p{font-size:var(--text-sm);color:var(--text-muted);line-height:1.7;margin-bottom:16px}.policy-wrap ul{list-style:disc;padding-left:24px;margin-bottom:16px;color:var(--text-muted);font-size:var(--text-sm);line-height:1.7}.policy-wrap ul li{margin-bottom:8px}.policy-wrap strong{color:var(--text)}</style>
-</head><body><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности — DeepCall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=10">
+    <style>
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .privacy-section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            backdrop-filter: blur(20px);
+        }
+        
+        .privacy-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .privacy-section h3 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px;
+            color: var(--text);
+        }
+        
+        .privacy-section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .privacy-section ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .privacy-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table th {
+            background: rgba(0,180,216,0.1);
+            font-weight: 600;
+        }
+        
+        .data-table tr:hover {
+            background: rgba(0,180,216,0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-content {
+                padding: 20px 15px;
+            }
+            
+            .privacy-header h1 {
+                font-size: 2rem;
+            }
+            
+            .privacy-section {
+                padding: 20px 15px;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .data-table {
+                font-size: 0.9rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="logo">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 22 C6 20 4 18 5 16 C7 18 8 20 8 22" opacity="0.6"/>
+                <path d="M8 22 C6 24 4 26 5 28 C7 26 8 24 8 22" opacity="0.6"/>
+                <path d="M8 22 Q8 14 18 14 Q28 14 30 20 Q28 26 18 26 Q8 26 8 22"/>
+                <path d="M18 14 Q20 10 22 12"/>
+                <path d="M18 22 Q14 24 16 26"/>
+                <circle cx="24" cy="19" r="1.5" fill="currentColor" opacity="0.8"/>
+                <path d="M26 24 Q28 25 30 23" opacity="0.5"/>
+                <rect x="28" y="17" width="5" height="10" rx="2.5" transform="rotate(-25 30.5 22)" opacity="0.8"/>
+                <path d="M30 20 L33 17" opacity="0.6"/>
+            </svg>
+            DeepCall
+        </a>
+        <div class="nav-links">
+            <a href="products.html">Продукты</a>
+            <a href="cases.html">Кейсы</a>
+            <a href="how-it-works.html">Как работает</a>
+            <a href="about.html">О нас</a>
+            <a href="contacts.html" class="nav-cta">Запросить консультацию</a>
+        </div>
+        <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </nav>
 
-<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
-<symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></symbol>
-</defs></svg>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Главная</a>
+        <a href="products.html">Продукты</a>
+        <a href="cases.html">Кейсы</a>
+        <a href="how-it-works.html">Как работает</a>
+        <a href="about.html">О нас</a>
+        <a href="roi-calculator.html">ROI-калькулятор</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="contacts.html" style="color:var(--accent)">Запросить консультацию</a>
+    </div>
 
-<nav class="nav" id="nav">
-<a href="index.html" class="logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M8 22 C6 20 4 18 5 16 C7 18 8 20 8 22" opacity="0.6"/>
-  <path d="M8 22 C6 24 4 26 5 28 C7 26 8 24 8 22" opacity="0.6"/>
-  <path d="M8 22 Q8 14 18 14 Q28 14 30 20 Q28 26 18 26 Q8 26 8 22"/>
-  <path d="M18 14 Q20 10 22 12"/>
-  <path d="M18 22 Q14 24 16 26"/>
-  <circle cx="24" cy="19" r="1.5" fill="currentColor" opacity="0.8"/>
-  <path d="M26 24 Q28 25 30 23" opacity="0.5"/>
-  <path d="M30 20 C32 19 34 20 35 22 C36 24 35 26 33 27" />
-  <rect x="32" y="18" width="4" height="8" rx="2" transform="rotate(-20 34 22)" opacity="0.7"/>
-</svg>DeepCall</a>
-<div class="nav-links"><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="about.html">О нас</a><a href="contacts.html" class="nav-cta">Запросить консультацию</a></div>
-<div class="burger" id="burger"><span></span><span></span><span></span></div></nav>
-<div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-menu" id="mobileMenu">
-<a href="index.html">Главная</a><a href="products.html">Продукты</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a>
-<a href="about.html">О нас</a><a href="roi-calculator.html">ROI</a><a href="contacts.html">Контакты</a><a href="contacts.html" style="color:var(--accent)">Запросить консультацию</a></div>
+    <!-- Privacy Content -->
+    <div class="privacy-content">
+        <div class="privacy-header">
+            <h1>Политика конфиденциальности</h1>
+            <p>Актуальна на 02.06.2026 г.</p>
+        </div>
 
-<section class="hero" style="min-height:35vh;padding:160px 24px 60px">
-<div class="hero-bg"></div><div class="hero-inner"><div class="hero-badge"><div class="dot"></div>Правовая информация</div>
-<h1 class="gradient-text" style="font-size:clamp(1.5rem,4vw,2.5rem)">Политика конфиденциальности</h1>
-<p class="hero-sub" style="max-width:640px">Как мы обрабатываем данные, защищаем информацию и обеспечиваем прозрачность</p></div></section>
+        <div class="privacy-section">
+            <h2>1. Общие положения</h2>
+            <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые DeepCall (далее – Оператор).</p>
+            
+            <h3>1.1. Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</h3>
+            
+            <h3>1.2. Настоящая политика Оператора в отношении обработки персональных данных (далее – Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта https://deepcall.ai.</h3>
+        </div>
 
-<section class="section"><div class="policy-wrap">
-<h2>1. Общие положения</h2>
-<p>DeepCall Analytics (далее — «Компания») обязуется обеспечить защиту персональных данных и коммерческой тайны своих клиентов. Настоящая Политика определяет порядок сбора, хранения и обработки информации при использовании сервисов DeepCall.</p>
+        <div class="privacy-section">
+            <h2>2. Основные понятия, используемые в Политике</h2>
+            <p><strong>Автоматизированная обработка персональных данных</strong> – обработка персональных данных с помощью средств вычислительной техники;</p>
+            <p><strong>Блокирование персональных данных</strong> – временное прекращение обработки персональных данных (за исключением случаев, если обработка необходима для уточнения персональных данных);</p>
+            <p><strong>Веб-сайт</strong> – совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу https://deepcall.ai;</p>
+            <p><strong>Информационная система персональных данных</strong> — совокупность содержащихся в базах данных персональных данных, и обеспечивающих их обработку информационных технологий и технических средств;</p>
+            <p><strong>Обезличивание персональных данных</strong> — действия, в результате которых невозможно определить без использования дополнительной информации принадлежность персональных данных конкретному Пользователю или иному субъекту персональных данных;</p>
+            <p><strong>Обработка персональных данных</strong> – любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных;</p>
+            <p><strong>Оператор</strong> – государственный орган, муниципальный орган, юридическое или физическое лицо, самостоятельно или совместно с другими лицами организующие и (или) осуществляющие обработку персональных данных, а также определяющие цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными;</p>
+            <p><strong>Персональные данные</strong> – любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта https://deepcall.ai;</p>
+            <p><strong>Пользователь</strong> – любой посетитель веб-сайта https://deepcall.ai;</p>
+            <p><strong>Предоставление персональных данных</strong> – действия, направленные на раскрытие персональных данных определенному лицу или определенному кругу лиц;</p>
+            <p><strong>Распространение персональных данных</strong> – любые действия, направленные на раскрытие персональных данных неопределенному кругу лиц (передача персональных данных) или на ознакомление с персональными данными неограниченного круга лиц, в том числе обнародование персональных данных в средствах массовой информации, размещение в информационно-телекоммуникационных сетях или предоставление доступа к персональным данным каким-либо иным способом;</p>
+            <p><strong>Трансграничная передача персональных данных</strong> – передача персональных данных на территорию иностранного государства органу власти иностранного государства, иностранному физическому или иностранному юридическому лицу;</p>
+            <p><strong>Уничтожение персональных данных</strong> – любые действия, в результате которых персональные данные уничтожаются безвозвратно с невозможностью дальнейшего восстановления содержания персональных данных в информационной системе персональных данных и (или) уничтожаются материальные носители персональных данных.</p>
+        </div>
 
-<h2>2. Какие данные мы обрабатываем</h2>
-<ul>
-<li><strong>Аудиозаписи звонков</strong> — загружаются клиентом на его собственный SFTP-сервер или по API. DeepCall проводит анализ, но не хранит постоянно без разрешения.</li>
-<li><strong>Метаданные звонков</strong> — дата, длительность, номер, скорость ответа, теги оператора, результаты конверсии.</li>
-<li><strong>Результаты аналитики</strong> — отчёты, карты сильных/слабых мест, чек-листы точек роста.</li>
-<li><strong>Контактные данные</strong> — имя, email, телефон руководителя, указанные при регистрации.</li>
-</ul>
+        <div class="privacy-section">
+            <h2>3. Оператор может обрабатывать следующие персональные данные Пользователя</h2>
+            <p>Фамилия, имя, отчество;</p>
+            <p>Электронный адрес;</p>
+            <p>Номера телефонов;</p>
+            <p>Год, месяц, дата и место рождения;</p>
+            <p>Фотографии;</p>
+            <p>Также на сайте происходит сбор и обработка обезличенных информационных данных о посетителях (в т.ч. файлов «cookie») с помощью сервисов интернет-статистики (Яндекс Метрика и Гугл Аналитика и других).</p>
+            <p>Вышеперечисленные данные далее по тексту Политики объединены общим понятием Персональные данные.</p>
+        </div>
 
-<h2>3. Хранение данных</h2>
-<p>Все серверы размещены на территории Российской Федерации — площадки Yandex Cloud и Selectel (Москва, Санкт-Петербург). Используется шифрование SSD на уровне хоста, изолированные сети VLAN и firewall на уровне приложения.</p>
-<p>Аудиозаписи хранятся только на стороне клиента. DeepCall обрабатывает потоковые данные и не ведёт архив чужих записей на своих мощностях без отдельного соглашения.</p>
+        <div class="privacy-section">
+            <h2>4. Цели обработки персональных данных</h2>
+            <p>Цель обработки персональных данных Пользователя — информирование Пользователя посредством отправки электронных писем; заключение, исполнение и прекращение гражданско-правовых договоров; предоставление доступа Пользователю к сервисам, информации и/или материалам, содержащимся на веб-сайте.</p>
+            <p>Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях и различных событиях. Пользователь всегда может отказаться от получения информационных сообщений, направив Оператору письмо на адрес электронной почты privacy@deepcall.ai с пометкой «Отказ от уведомлений о новых продуктах и услугах и специальных предложениях».</p>
+        </div>
 
-<h2>4. Передача третьим лицам</h2>
-<p>Данные не передаются третьим лицам ни при каких обстоятельствах, за исключением:</p>
-<ul>
-<li>Запроса уполномоченных государственных органов в рамках действующего законодательства РФ.</li>
-<li>Обезличенных статистических срезов (без возможности идентификации клиента или абонента) — только с письменного согласия клиента.</li>
-</ul>
+        <div class="privacy-section">
+            <h2>5. Правовые основания обработки персональных данных</h2>
+            <p>Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем самостоятельно через специальные формы, расположенные на сайте https://deepcall.ai или направленные Оператору посредством электронной почты. Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает свое согласие с данной Политикой.</p>
+            <p>Оператор обрабатывает обезличенные данные о Пользователе в случае, если это разрешено в настройках браузера Пользователя (включено сохранение файлов «cookie» и использование технологии JavaScript).</p>
+        </div>
 
-<h2>5. Безопасность</h2>
-<p>Используем end-to-end TLS 1.3, OAuth 2.0 / API Key авторизацию, MFA для административного доступа. Penetration testing проводится ежеквартально. Сертификат ISO 27001 (в процессе оформления, этап 2).</p>
+        <div class="privacy-section">
+            <h2>6. Порядок сбора, хранения, передачи и других видов обработки персональных данных</h2>
+            <p>Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований действующего законодательства в области защиты персональных данных.</p>
+            <p>Оператор обеспечивает неприкосновенность персональных данных и принимает все необходимые организационные и технические меры для исключения их распространения, неправомерного или случайного доступа к ним, уничтожения, изменения, блокирования, копирования, предоставления, распространения персональных данных, а также от иных неправомерных действий в отношении персональных данных.</p>
+            <p>Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства.</p>
+            <p>В случае выявления неточностей в персональных данных, Пользователь может актуализировать их самостоятельно, путем направления Оператору уведомление на адрес электронной почты Оператора privacy@deepcall.ai с пометкой «Актуализация персональных данных».</p>
+            <p>Срок обработки персональных данных является неограниченным. Пользователь может в любой момент отозвать свое согласие на обработку персональных данных, направив Оператору уведомление посредством электронной почты на электронный адрес Оператора privacy@deepcall.ai с пометкой «Отзыв согласия на обработку персональных данных».</p>
+        </div>
 
-<h2>6. Права субъектов данных</h2>
-<p>Клиент в любой момент может запросить:</p>
-<ul>
-<li>Экспорт всех своих данных в формате JSON/CSV.</li>
-<li>Удаление данных — исполняем в течение 24 часов с момента получения заявки.</li>
-<li>Исправление неточностей — метаданные обновляются в течение 2 часов.</li>
-</ul>
+        <div class="privacy-section">
+            <h2>7. Трансграничная передача персональных данных</h2>
+            <p>Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надежная защита прав субъектов персональных данных.</p>
+            <p>Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных.</p>
+        </div>
 
-<h2>7. Сроки хранения</h2>
-<p>Метаданные — до 5 лет с момента последнего входа (требования по аналитике). Контактные данные — до момента отказа от рассылок. Аудиозаписи — только в кэше обработки, не более 72 часов.</p>
+        <div class="privacy-section">
+            <h2>8. Заключительные положения</h2>
+            <p>Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору с помощью электронной почты privacy@deepcall.ai.</p>
+            <p>В данном документе Политики могут быть внесены изменения. В случае внесения изменений в актуальной редакции указывается дата последнего обновления. Новая редакция Политики вступает в силу с момента ее размещения, если иное не предусмотрено новой редакцией Политики.</p>
+            <p>Действующая редакция постоянно доступна на сайте по адресу https://deepcall.ai/privacy.html.</p>
+        </div>
+    </div>
 
-<h2>8. Контакты</h2>
-<p>По вопросам конфиденциальности и защиты данных: <strong>privacy@deepcall.ru</strong>. Дата последнего обновления: 1 июня 2026 года.</p>
-</div></section>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('burger').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.getElementById('mobileOverlay').classList.toggle('open');
+        });
 
-<footer class="footer"><div><div class="footer-logo"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M8 22 C6 20 4 18 5 16 C7 18 8 20 8 22" opacity="0.6"/>
-  <path d="M8 22 C6 24 4 26 5 28 C7 26 8 24 8 22" opacity="0.6"/>
-  <path d="M8 22 Q8 14 18 14 Q28 14 30 20 Q28 26 18 26 Q8 26 8 22"/>
-  <path d="M18 14 Q20 10 22 12"/>
-  <path d="M18 22 Q14 24 16 26"/>
-  <circle cx="24" cy="19" r="1.5" fill="currentColor" opacity="0.8"/>
-  <path d="M26 24 Q28 25 30 23" opacity="0.5"/>
-  <path d="M30 20 C32 19 34 20 35 22 C36 24 35 26 33 27" />
-  <rect x="32" y="18" width="4" height="8" rx="2" transform="rotate(-20 34 22)" opacity="0.7"/>
-</svg>DeepCall</div>
-<div class="footer-copy">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div></div>
-<div><h4>Продукты</h4><a href="product-audit.html">Аудит</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a><a href="product-call-tracking.html">Call Tracking</a></div>
-<div><h4>Компания</h4><a href="about.html">О нас</a><a href="cases.html">Кейсы</a><a href="how-it-works.html">Как работает</a><a href="contacts.html">Контакты</a></div>
-<div><h4>Правовое</h4><a href="privacy.html">Конфиденциальность</a><a href="terms.html">Условия</a><a href="security.html">Безопасность</a></div>
-</footer>
-<script src="js/script.js?v=8"></script>
-<script src="js/ocean.js?v=8"></script></body></html>
+        document.getElementById('mobileOverlay').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('open');
+            this.classList.remove('open');
+        });
+
+        // Nav scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
