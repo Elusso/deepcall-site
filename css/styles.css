@@ -832,7 +832,8 @@ img { max-width:100%; display:block }
   .section-head h2 { font-size: 1.5rem; }
   .btn { padding: 12px 24px; font-size: 0.875rem; }
   .hero-cta { gap: var(--space-3); }
-  .num-grid { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+  .num-grid { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .num-lbl { font-size: .65rem; }
   .num-val { font-size: 1.5rem; }
   .nav { padding: 0 var(--space-3); height: 48px; }
   .logo svg { width: 24px; height: 24px; }
