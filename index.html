@@ -7,106 +7,7 @@
 <meta name="description" content="DeepCall: предиктивная аналитика звонков, AI-обзвон, перехват конкурентов. 1430+ компаний, 470% ROI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=10">
-<style>
-  .hero h1 { font-family: 'Space Grotesk', 'Inter', sans-serif !important; font-weight: 700; letter-spacing: -0.02em; }
-  .section-head h2 { font-family: 'Space Grotesk', 'Inter', sans-serif !important; }
-  .cta-section h2 { font-family: 'Space Grotesk', 'Inter', sans-serif !important; }
-  
-  /* Animated concentric circles - radio waves */
-  .hero-circles {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .h-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    border: 2px solid;
-    opacity: 0;
-    animation: circleExpand 4s ease-out infinite;
-  }
-  .h-circle.c1 { width: 100px; height: 100px; border-color: rgba(167,139,250,0.6); animation-delay: 0s; }
-  .h-circle.c2 { width: 200px; height: 200px; border-color: rgba(0,212,255,0.5); animation-delay: 0.5s; }
-  .h-circle.c3 { width: 320px; height: 320px; border-color: rgba(52,211,153,0.4); animation-delay: 1s; }
-  .h-circle.c4 { width: 460px; height: 460px; border-color: rgba(96,165,250,0.3); animation-delay: 1.5s; }
-  .h-circle.c5 { width: 580px; height: 580px; border-color: rgba(167,139,250,0.2); animation-delay: 2s; }
-  
-  @keyframes circleExpand {
-    0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 0.4; }
-    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
-  }
-  
-  /* Spiral wave inside circles */
-  .spiral-core {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,212,255,0.3), transparent 70%);
-    animation: spiralPulse 2s ease-in-out infinite;
-  }
-  @keyframes spiralPulse {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.9; }
-  }
-
-  /* Background particles — stars and floating dots */
-  .hero-particles {
-    position: absolute; inset: 0; pointer-events: none; z-index: 0;
-    overflow: hidden;
-  }
-  .hero-particles .star {
-    position: absolute; width: 2px; height: 2px;
-    background: rgba(0,212,255,0.6); border-radius: 50%;
-    animation: starTwinkle 3s ease-in-out infinite;
-  }
-  .hero-particles .star.bright {
-    width: 3px; height: 3px;
-    background: rgba(0,212,255,0.9);
-    box-shadow: 0 0 6px rgba(0,212,255,0.5);
-  }
-  @keyframes starTwinkle {
-    0%,100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.3); }
-  }
-  /* Floating grid lines */
-  .hero-grid {
-    position: absolute; inset: 0; pointer-events: none; z-index: 0;
-    background-image: 
-      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-    mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
-  }
-  /* Slow drifting dots */
-  .hero-particles .drift {
-    position: absolute; border-radius: 50%;
-    background: rgba(0,180,216,0.15);
-    animation: driftUp linear infinite;
-  }
-  @keyframes driftUp {
-    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 0.3; }
-    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
-  }
-
-</style>
+<link rel="stylesheet" href="css/styles.css?v=20">
 </head>
 <body><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
 
@@ -130,7 +31,7 @@
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="nav">
   <a href="index.html" class="logo">
-    <img src="assets/logo.svg" alt="DeepCall Logo" style="height: 40px; width: auto;">
+    <img src="assets/logo.svg" alt="DeepCall Logo">
     DeepCall
   </a>
   <div class="nav-links">
@@ -145,9 +46,9 @@
 
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-logo" style="text-align: center; padding: 20px 0;">
-    <img src="assets/logo.svg" alt="DeepCall Logo" style="height: 40px; width: auto;">
-    <div style="margin-top: 10px; font-size: 1.5rem; font-weight: bold;">DeepCall</div>
+  <div class="mobile-logo">
+    <img src="assets/logo.svg" alt="DeepCall Logo">
+    <div class="mobile-brand">DeepCall</div>
   </div>
   <a href="index.html">Главная</a>
   <a href="products.html">Продукты</a>
@@ -156,7 +57,7 @@
   <a href="about.html">О нас</a>
   <a href="roi-calculator.html">ROI-калькулятор</a>
   <a href="contacts.html">Контакты</a>
-  <a href="contacts.html" style="color:var(--accent)">Запросить консультацию</a>
+  <a href="contacts.html" class="mobile-cta">Запросить консультацию</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -235,8 +136,8 @@
 <section class="section" id="products">
   <div class="section-head reveal-up"><h2>Продукты</h2><p>Четыре модуля, которые работают по отдельности или вместе</p></div>
   <div class="card-grid g-4">
-    <a href="product-call-tracking.html" class="product-card card-cyan reveal delay-1" style="border:1px solid rgba(0,212,255,0.3);position:relative">
-      <div style="position:absolute;top:-10px;right:16px;background:linear-gradient(135deg,#ff6b35,#f7931e);color:#fff;font-size:10px;font-weight:800;padding:4px 14px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;box-shadow:0 4px 15px rgba(255,107,53,0.4);z-index:10">🔥 Бестселлер</div>
+    <a href="product-call-tracking.html" class="product-card card-cyan reveal delay-1">
+      <div class="badge-hot">🔥 Бестселлер</div>
       <span class="tag">Call Tracking</span>
       <div class="metric">1000+</div><div class="metric-lbl">контактов за первую неделю</div>
       <h3>Перехват звонков конкурентов</h3><p>Загружаете номера конкурентов → получаете 1000+ свежих контактов за неделю. Окупаемость — от 5 дней. ROI 520%.</p>
@@ -285,7 +186,7 @@
 <!-- ═══ HOW IT WORKS ═══ -->
 <section class="section" id="how">
   <div class="section-head reveal-up"><h2>Как это работает</h2><p>От аудита до первого AI-звонка — 72 часа</p></div>
-  <div style="max-width:900px; margin:0 auto; position:relative">
+  <div class="how-container">
     <div class="scheme-step reveal"><div class="step-num">01</div><div class="step-body"><h4>Глубокий аудит звонков</h4><p>Анализируем 2000+ звонков за 1 день. Тегируем по 42 параметрам: скорость ответа, диалог, возражения, закрытие.</p></div></div>
     <div class="scheme-step reveal delay-1"><div class="step-num">02</div><div class="step-body"><h4>Предиктивные базы</h4><p>Формируем базы с AI-обработкой: вероятность ответа, лояльность. +35% конверсия при постобработке Cheshire.</p></div></div>
     <div class="scheme-step reveal delay-2"><div class="step-num">03</div><div class="step-body"><h4>Персонализированный обзвон</h4><p>Каждый звонок с историей и портретом. +40% отклик при точечном обзвоне с данными. Интеграция CRM за 15 мин.</p></div></div>
@@ -310,17 +211,17 @@
   <div class="section-head reveal-up"><h2>Кейсы клиентов</h2><p>Реальные компании, измеримый рост</p></div>
   <div class="card-grid g-3">
     <a href="cases.html#alpha" class="case-card reveal delay-1">
-      <div class="case-header"><div class="case-avatar">А</div><div><strong>АльфаСтрой</strong><div style="font-size:.75rem;color:var(--text-dim)">Строительный холдинг</div></div></div>
+      <div class="case-header"><div class="case-avatar">А</div><div><strong>АльфаСтрой</strong><div class="case-role">Строительный холдинг</div></div></div>
       <div class="quote">"DeepCall увеличил конверсию на 34% за 2 месяца. AI-аудит нашёл точки роста, которые мы не видели 3 года."</div>
       <div class="metric-val">+34%</div><div class="metric-lbl">рост конверсии за 8 недель</div>
     </a>
     <a href="cases.html#omega" class="case-card reveal delay-2">
-      <div class="case-header"><div class="case-avatar">О</div><div><strong>ОмегаЛогистик</strong><div style="font-size:.75rem;color:var(--text-dim)">Логистика и склад</div></div></div>
+      <div class="case-header"><div class="case-avatar">О</div><div><strong>ОмегаЛогистик</strong><div class="case-role">Логистика и склад</div></div></div>
       <div class="quote">"Постобработка Cheshire дала +41% полезных контактов. Базы сэкономили 2 человеко-месяца ручного набора."</div>
       <div class="metric-val">+41%</div><div class="metric-lbl">полезных контактов</div>
     </a>
     <a href="cases.html#prime" class="case-card reveal delay-3">
-      <div class="case-header"><div class="case-avatar">П</div><div><strong>ПраймМед</strong><div style="font-size:.75rem;color:var(--text-dim)">Медицинская сеть</div></div></div>
+      <div class="case-header"><div class="case-avatar">П</div><div><strong>ПраймМед</strong><div class="case-role">Медицинская сеть</div></div></div>
       <div class="quote">"CLAwd обзвонил 2000 кандидатов за ночь после Дня HR. Обычно на это уходит 2 недели."</div>
       <div class="metric-val">2 000</div><div class="metric-lbl">звонков за 1 ночь</div>
     </a>
@@ -332,7 +233,7 @@
   <div class="section reveal-up">
     <h2 class="gradient-text">Готовы узнать прогноз для вашей компании?</h2>
     <p>Ответьте на 5 вопросов — получите персональный расчёт ROI и сценарий внедрения.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <div class="cta-buttons">
       <a href="roi-calculator.html"><button class="btn btn-primary">Рассчитать ROI</button></a>
       <a href="contacts.html"><button class="btn btn-glow">Запросить консультацию</button></a>
     </div>
@@ -342,12 +243,12 @@
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
   <div>
-    <div class="footer-logo"><img src="assets/logo.svg" alt="DeepCall Logo" style="height: 40px; width: auto; vertical-align: middle; margin-right: 12px;">DeepCall</div>
+    <div class="footer-logo"><img src="assets/logo.svg" alt="DeepCall Logo"><span class="brand-text">DeepCall</span></div>
     <div class="footer-copy">
-      <svg width="14" height="14" style="vertical-align:middle;margin-right:6px"><use href="#i-phone"/></svg>8-800-555-00-00<br>
-      <span style="color:var(--accent)"><svg width="14" height="14" style="vertical-align:middle;margin-right:6px" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>@deepcall_support</span>
-      <div style="margin-top:12px">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div>
-      <div style="margin-top:8px"><span class="gradient-text" style="font-size:.625rem;letter-spacing:.05em">MADE WITH AI IN RUSSIA</span></div>
+      <svg width="14" height="14"><use href="#i-phone"/></svg>8-800-555-00-00<br>
+      <span class="accent-link"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>@deepcall_support</span>
+      <div class="mt-3">DeepCall &copy; 2026. Глубоко зовём, быстро ловим.</div>
+      <div class="mt-2"><span class="gradient-text" class="micro-text">MADE WITH AI IN RUSSIA</span></div>
     </div>
   </div>
   <div><h4>Продукты</h4><a href="product-call-tracking.html">Call Tracking</a><a href="product-audit.html">Аудит звонков</a><a href="product-bases.html">Базы номеров</a><a href="product-clawd.html">CLAwd AI</a></div>
@@ -355,8 +256,8 @@
   <div><h4>Правовое</h4><a href="privacy.html">Политика конфиденциальности</a><a href="terms.html">Условия использования</a><a href="security.html">Безопасность данных</a></div>
 </footer>
 
-<script src="js/script.js?v=8"></script>
-  <script src="js/ocean.js?v=8"></script>
-    <script src="js/responsive-logo.js"></script>
+<script src="js/script.js?v=9"></script>
+<script src="js/ocean.js?v=9"></script>
+<script src="js/responsive-logo.js"></script>
 </body>
 </html>
