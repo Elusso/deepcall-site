@@ -116,20 +116,10 @@
 <body>
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <a href="index.html" class="logo">
-            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 22 C6 20 4 18 5 16 C7 18 8 20 8 22" opacity="0.6"/>
-                <path d="M8 22 C6 24 4 26 5 28 C7 26 8 24 8 22" opacity="0.6"/>
-                <path d="M8 22 Q8 14 18 14 Q28 14 30 20 Q28 26 18 26 Q8 26 8 22"/>
-                <path d="M18 14 Q20 10 22 12"/>
-                <path d="M18 22 Q14 24 16 26"/>
-                <circle cx="24" cy="19" r="1.5" fill="currentColor" opacity="0.8"/>
-                <path d="M26 24 Q28 25 30 23" opacity="0.5"/>
-                <rect x="28" y="17" width="5" height="10" rx="2.5" transform="rotate(-25 30.5 22)" opacity="0.8"/>
-                <path d="M30 20 L33 17" opacity="0.6"/>
-            </svg>
-            DeepCall
-        </a>
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="DeepCall Logo" style="height: 40px; width: auto; vertical-align: middle; margin-right: 12px;">
+                DeepCall
+            </a>
         <div class="nav-links">
             <a href="products.html">Продукты</a>
             <a href="cases.html">Кейсы</a>
@@ -142,6 +132,10 @@
 
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-logo" style="text-align: center; padding: 20px 0;">
+            <img src="assets/logo.svg" alt="DeepCall Logo" style="height: 40px; width: auto;">
+            <div style="margin-top: 10px; font-size: 1.5rem; font-weight: bold;">DeepCall</div>
+        </div>
         <a href="index.html">Главная</a>
         <a href="products.html">Продукты</a>
         <a href="cases.html">Кейсы</a>
@@ -253,5 +247,6 @@
             }
         });
     </script>
+    <script src="js/responsive-logo.js"></script>
 </body>
 </html>
